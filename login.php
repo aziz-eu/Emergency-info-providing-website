@@ -93,7 +93,7 @@
                           </form>
                           <div class="text-center registration-option">
                           <h6>Do Not Hava a Account? Register as :</h6>
-                          <p><a href="">Ambulance Admin</a>&emsp;|&emsp;<a href="blood_bank_registration.php">Blood Bank Admin</a>&emsp;|&emsp;<a href="donor_registration.php">Blood Donor</a>&emsp;|&emsp;<a href="">Hospital Admin</a></p>
+                          <p><a href="./ambulance_registration.php">Ambulance Admin</a>&emsp;|&emsp;<a href="blood_bank_registration.php">Blood Bank Admin</a>&emsp;|&emsp;<a href="donor_registration.php">Blood Donor</a>&emsp;|&emsp;<a href="">Hospital Admin</a></p>
                           <p><a href="">Police Admin</a> &emsp; |&emsp;<a href="">Fire Service Admin</a></p>
                         </div>
 
