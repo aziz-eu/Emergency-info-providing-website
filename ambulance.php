@@ -87,7 +87,8 @@
            
         </div>
           <div class="col-lg-6 mb-5 form-content py-5">
-            <form>
+          <?php include_once 'partials/msg.php' ?>
+            <form method="post" action="./ambulance_Search.php">
              
               <label for="division" class="form-lable">Devision</label>
               <select class="form-select" name="division" id="division">
@@ -109,7 +110,7 @@
                     </option>
                   </select>       
               <div class="text-center mt-3 mb-5">
-                <button type="submit" class="btn btn-dark">Search</button>
+                <button name = "ambulanceSearch" type="submit" class="btn btn-dark">Search</button>
               </div>
             </form>
           </div>
