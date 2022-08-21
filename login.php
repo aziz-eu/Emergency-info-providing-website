@@ -8,6 +8,7 @@
     // pr($_POST, true);
     $tables = [
         'blood_donor' => 'donors_registration',
+        'blood_bank_admin' => 'blood_bank',
         'ambulance_authority' => '',
         'hospital_authority' => ''
     ];
@@ -18,8 +19,22 @@
 
    
     
-    if( login($username, $password, $tables[$role]) )
-      redirect('donorDashboard.php', 'You are logged in successfully');
+    if( login($username, $password, $tables[$role]) ){
+      switch($tables[$role]){
+        case 'donors_registration':
+          redirect('donorDashboard.php', 'You are logged in successfully');
+          break;
+        case 'blood_bank':
+          redirect('blood_bank_deshboard.php', 'You are logged in successfully');
+          break;
+        
+        default:
+          redirect('logout.php');
+
+      }
+      
+    }
+      
     
     else{
         $_GET['msg'] = "Username or password does not match";
@@ -82,7 +97,7 @@
                                 Select Your Role
                               </option>
                               <option value="blood_donor">Blood Donor</option>
-                              <option value="blood_donor">Blood Bank Admin</option>
+                              <option value="blood_bank_admin">Blood Bank Admin</option>
                               <option value="ambulance_authority">Ambulance Authority</option>
                               <option value="hospital_authority">Hospital Authority</option>
                             </select>
