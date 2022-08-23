@@ -4,18 +4,18 @@ include_once 'includes/session.php';
 include_once 'config/db.php';
 // guard('login.php', 'You must login first');
 
-if (isset($_POST['ambulanceSearch'])) {
+if (isset($_POST['policeSerch'])) {
     $division = trim($_POST['division']);
     $city = trim($_POST['city']);
     $upazila = trim($_POST['upazila']);
 
-    $sql = "SELECT * FROM `ambulance_registration` WHERE division = '$division' AND  city = '$city' AND upazila = '$upazila' ";
+    $sql = "SELECT * FROM `police` WHERE division = '$division' AND  city = '$city' AND upazila = '$upazila' ";
     $results = $con->query($sql);
 
     if ($results->num_rows == 0)
-        redirect('ambulance.php', 'No results found', 'danger');
+        redirect('police.php', 'No results found', 'danger');
 } else {
-    redirect('ambulance.php');
+    redirect('police.php');
 }
 
 
@@ -47,20 +47,15 @@ if (isset($_POST['ambulanceSearch'])) {
 
                     <div class="col-6  d-block d-lg-flex">
                         <div class="blook-bank-card propertiys">
-                            <h2><?php echo $row['org_name'] ?></h2>
+                            <h2><?php echo $row['branch_name'] ?></h2>
                             <ul>
                                 <li>Phone : <?php echo $row['phone'] ?></li>
                                 <li>Email: <?php echo $row['email'] ?></li>
-                                <li>Address : <?php echo $row['address'] ?>, <?php echo $row['upazila'] ?> , <?php echo $row['city'] ?></li>
+                                <li>Address : <?php echo $row['location'] ?>, <?php echo $row['upazila'] ?> , <?php echo $row['city'] ?></li>
                                 </li>
-                                <li>Status : Replay with in a 1 hour</li>
                             </ul>
 
-                            <div class="text-center my-3">
-                                <button type="submit" class="btn btn-dark">
-                                    Send a Message
-                                </button>
-                            </div>
+                           
                         </div>
 
 

@@ -14,6 +14,36 @@ if (isset($_POST['ambulanceSearch'])) {
 
     if ($results->num_rows == 0)
         redirect('ambulance.php', 'No results found', 'danger');
+}
+
+
+else if (isset($_POST['send_message'])) {
+    //pr($_POST, true);
+
+    $ambulance_type =  trim($_POST['ambulance_type']);
+    $date_of_departing =  trim($_POST['date_of_departing']);
+    $source_address =  trim($_POST['source_address']);
+    $destination_address =  trim($_POST['destination_address']);
+    $customer_name =  trim($_POST['customer_name']);
+    $contact_number =  trim($_POST['contact_number']);
+    $ambulance_id =  trim($_POST['ambulance_id']);
+
+
+    
+
+
+    $sql = "INSERT INTO `ambulance_request` (`ambulance_type`, `departing_date`, `source_address`, `destination_address`, `customer_name`, `contact_number`,`ambulance_id`) VALUES ('$ambulance_type', '$date_of_departing', '$source_address', '$destination_address', '$customer_name', '$contact_number', '$ambulance_id')";
+
+
+
+
+
+
+    if ($con->query($sql) == true) {
+        redirect('ambulance.php', 'Your Application is Recived. We will Contact you as soon as possiable.');
+    } else {
+        echo "Error: " . $sql . "<br>" . $con->error;
+    }
 } else {
     redirect('ambulance.php');
 }
@@ -57,17 +87,80 @@ if (isset($_POST['ambulanceSearch'])) {
                             </ul>
 
                             <div class="text-center my-3">
-                                <button type="submit" class="btn btn-dark">
-                                    Send a Message
+
+                                <!-- Button trigger modal -->
+                                <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bloodApplication">
+                                    Send Messahe
                                 </button>
+
+
+
                             </div>
                         </div>
 
 
+
                     </div>
+                    <div class="modal fade" id="bloodApplication" tabindex="-1" aria-labelledby="bloodApplicationLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="bloodApplicationLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+
+
+
+                                    <!-- <--Form in Modal-->
+
+
+                                    <form method="POST" action="./ambulance_Search.php">
+
+
+
+                                        <label for="ambulance-type" class="form-lable">Ambulance Type</label>
+                                        <select class="form-select" name="ambulance_type" id="ambulance_type">
+                                            <option value="AC" selected>AC Ambulance</option>
+                                            <option value="Non AC">Non AC Ambulance</option>
+                                            <option value="ICU ">ICU Ambulance</option>
+                                            <option value="CCU">CCU Ambulance</option>
+                                            <option value="Frezing">Frezing Ambulance</option>
+
+                                        </select>
+
+
+
+
+                                        <label for="date" class="form-lable">Departing Date</label>
+                                        <input type="text" class="form-control" name="date_of_departing" id="date" placeholder="DD/MM/YYYY" required />
+                                        <label for="source_address" class="form-lable">From</label>
+                                        <input type="text" class="form-control" name="source_address" id="address" required placeholder="e.g. Dhanmondi" />
+                                        <label for="destination_address" class="form-lable">To</label>
+                                        <input type="text" class="form-control" name="destination_address" id="address" required placeholder="e.g. Noakhali" />
+                                        <label for="customer-name" class="form-lable">Applicant Name</label>
+                                        <input type="text" class="form-control" name="customer_name" id="customer_name" required placeholder="e.g. Maria" />
+
+                                        <label for="contact_number" class="form-lable">Contact Number:</label>
+                                        <input type="tel" class="form-control" name="contact_number" id="phone" required placeholder="e.g 01555566677" />
+
+                                        <!-- id can not found properly -->
+
+                                        <input type="hidden" name="ambulance_id" value="<?php echo $row['id'] ?>">
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" name="send_message" class="btn btn-primary">Send Message</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                <?php endwhile ?>
             </div>
-        <?php endwhile ?>
-        </div>
         </div>
     </main>
 

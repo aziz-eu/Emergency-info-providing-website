@@ -87,7 +87,7 @@
            
         </div>
           <div class="col-lg-6 mb-5 form-content py-5">
-            <form>
+            <form method="POST" action="./police_search.php">
              
               <label for="division" class="form-lable">Devision</label>
               <select class="form-select" name="division" id="division">
@@ -110,7 +110,7 @@
                     </option>
                   </select>       
                   <div class="text-center">
-                <button type="submit" class="btn btn-dark mt-3 mb-5">Search</button>
+                <button type="submit" name="policeSerch" class="btn btn-dark mt-3 mb-5">Search</button>
               </div>
               </div>
             </form>
@@ -121,18 +121,14 @@
   </main>
   <footer class="bg-dark text-center text-white">
     <div class="container p-4 pb-0">
-      <!-- Section: Social media -->
+    
       <section class="mb-4">
-        <!-- Facebook -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-
-        <!-- Twitter -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
 
-        <!-- Google -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
 
-        <!-- Instagram -->
+  
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
 
         <!-- Linkedin -->

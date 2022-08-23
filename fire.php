@@ -87,7 +87,7 @@
            
         </div>
           <div class="col-lg-6 mb-5 form-content py-5">
-            <form>
+            <form method="POST" action="./fire_s_search.php">
              
               <label for="division" class="form-lable">Devision</label>
               <select class="form-select" name="division" id="division">
@@ -109,7 +109,7 @@
                     </option>
                   </select>       
               <div class="text-center mt-3 mb-5">
-                <button type="submit" class="btn btn-dark">Search</button>
+                <button type="submit" name="fireServiceSerch" class="btn btn-dark">Search</button>
               </div>
             </form>
           </div>

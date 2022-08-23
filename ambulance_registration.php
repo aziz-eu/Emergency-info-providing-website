@@ -16,7 +16,7 @@ if(isset($_POST['ambulanceRegForm'])){
     $username = trim( $_POST['username']);
     $password =  md5(trim($_POST['password']));
 
-    $sql = "INSERT INTO `ambulance_registration` ( `org_name`, `email`, `phone`, `address`, `division`, `city`, `upazila`, `username`, `password`) VALUES ('$org_name', '$email', '$phone', '$address', '$division', '$city', '$upazila', '$username', '$password' );";
+    $sql = "INSERT INTO `ambulance_registration` ( `org_name`, `email`, `phone`, `address`, `division`, `city`, `upazila`, `user_name`, `password`) VALUES ('$org_name', '$email', '$phone', '$address', '$division', '$city', '$upazila', '$username', '$password' );";
 
 
     if($con->query($sql) == true  ){

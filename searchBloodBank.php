@@ -38,7 +38,8 @@ if (isset($_POST['applicationForm'])) {
   } else {
     echo "Error: " . $sql . "<br>" . $con->error;
   }
-} else {
+} 
+else {
   // redirect('blood_bank.php');
 }
 
@@ -113,7 +114,7 @@ if (isset($_POST['applicationForm'])) {
                         <!-- <--Form in Modal-->
 
 
-                        <form method="post" action="./searchBloodBank.php">
+                        <form method="POST" action="./searchBloodBank.php">
                           <label for="applicant-name" class="form-lable">Applicant Name</label>
                           <input type="text" class="form-control" name="applicant_name" id="applicant" required placeholder="e.g. Maria" />
                           <label for="phone" class="form-lable">Contact Person Phone:</label>

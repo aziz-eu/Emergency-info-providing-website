@@ -9,7 +9,7 @@
     $tables = [
         'blood_donor' => 'donors_registration',
         'blood_bank_admin' => 'blood_bank',
-        'ambulance_authority' => '',
+        'ambulance_authority' => 'ambulance_registration',
         'hospital_authority' => ''
     ];
 
@@ -26,6 +26,9 @@
           break;
         case 'blood_bank':
           redirect('blood_bank_deshboard.php', 'You are logged in successfully');
+          break;
+        case 'ambulance_registration':
+          redirect('ambulance_deshboard.php', 'You are logged in successfully');
           break;
         
         default:
