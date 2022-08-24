@@ -74,7 +74,7 @@ else {
       <div class="row">
         <?php while ($row = $results->fetch_assoc()) : ?>
 
-          <div class="col-lg-6">
+          <div class="col-lg-6 d-block d-lg-flex">
             <div class="blook-bank-card propertiys">
               <h2><?php echo $row['bank_name'] ?></h2>
               <ul>

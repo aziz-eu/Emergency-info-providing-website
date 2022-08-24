@@ -161,7 +161,7 @@
                   </th>
                   <td>General Medicin & Sergary</td>
                   <td>Shahbag, Dhaka-1000</td>
-                  <td><a href="">list</a></td>
+                  <td><a href="./hospital_doctor.php">list</a></td>
                 </tr>
                 <tr>
                   <th scope="row">Dhaka Medical Collage Hospital</th>

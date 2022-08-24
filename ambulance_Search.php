@@ -75,7 +75,7 @@ else if (isset($_POST['send_message'])) {
             <div class="row">
                 <?php while ($row = $results->fetch_assoc()) : ?>
 
-                    <div class="col-6  d-block d-lg-flex">
+                    <div class="col-lg-6 col-sm-12  d-block d-lg-flex">
                         <div class="blook-bank-card propertiys">
                             <h2><?php echo $row['org_name'] ?></h2>
                             <ul>
@@ -151,7 +151,7 @@ else if (isset($_POST['send_message'])) {
 
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" name="send_message" class="btn btn-primary">Send Message</button>
+                                            <button type="submit" name="send_message" class="btn btn-dark">Send Message</button>
                                         </div>
                                     </form>
                                 </div>
