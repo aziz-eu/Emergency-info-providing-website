@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2022 at 06:08 PM
+-- Generation Time: Sep 05, 2022 at 04:15 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -18,8 +18,30 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `em_services`
+-- Database: `emergency_info_providing_system`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `phone` varchar(32) NOT NULL,
+  `user_name` varchar(32) NOT NULL,
+  `password` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `email`, `phone`, `user_name`, `password`) VALUES
+(1, 'Abdul Aziz', 'abdulaziz1k99@gmail.com', '01842605509', 'aziz1k99', 'aziz1k99');
 
 -- --------------------------------------------------------
 
@@ -36,20 +58,17 @@ CREATE TABLE `ambulance_registration` (
   `division` varchar(32) NOT NULL,
   `city` varchar(32) NOT NULL,
   `upazila` varchar(32) NOT NULL,
-  `total_ambulance` int(32) NOT NULL,
-  `avaiable_ambulance` int(32) NOT NULL,
+  `ac` int(10) NOT NULL,
+  `non_ac` int(10) NOT NULL,
+  `icu` int(10) NOT NULL,
+  `hdu` int(10) NOT NULL,
+  `air` int(10) NOT NULL,
+  `frezing` int(10) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL,
   `user_name` varchar(32) NOT NULL,
   `password` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `ambulance_registration`
---
-
-INSERT INTO `ambulance_registration` (`id`, `org_name`, `email`, `phone`, `address`, `division`, `city`, `upazila`, `total_ambulance`, `avaiable_ambulance`, `user_name`, `password`) VALUES
-(1, 'Ma Ambulance', 'maambulance@email.info', '0199922323223', 'Majide', 'Chittagong', 'Noakhali', 'Noakhali Sadar', 0, 0, 'maabulance', '2e82b8f1c50de14f898663b915f5a250'),
-(2, 'MA Amulance', 'maamb@email.com', '01310803551', 'Mohammadpur and Gazipur', 'Dhaka', 'Dhaka', 'Dhaka City', 0, 0, 'jahid123', '98fb1c8e80ee4c84e9287016b7838708'),
-(114, 'Ambulance BD', 'ambd@email.com', '0182334672367', 'Dhanmondi', 'Dhaka', 'Dhaka', 'Dhaka City', 0, 0, 'ambd', 'af28edb70b2b75d47d218877703e76fe');
 
 -- --------------------------------------------------------
 
@@ -67,16 +86,6 @@ CREATE TABLE `ambulance_request` (
   `contact_number` varchar(32) NOT NULL,
   `ambulance_id` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `ambulance_request`
---
-
-INSERT INTO `ambulance_request` (`id`, `ambulance_type`, `departing_date`, `source_address`, `destination_address`, `customer_name`, `contact_number`, `ambulance_id`) VALUES
-(1, 'AC', '23/08/2022', 'Dhaka', 'Noakhali', 'Abdul Aziz', '01842605509', 1),
-(4, 'AC', 'Argent', 'Dhanmondi', 'Puran Dhaka', 'Maria', '01558934832948', 2),
-(5, 'ICU', 'Argent', 'Dhanmondi', 'Gazipur', 'Sharmin Akter', '01715173241', 2),
-(6, 'CCU', 'Argent', 'Dhanmondi', 'Airport', 'Kamal', '01333388991', 2);
 
 -- --------------------------------------------------------
 
@@ -102,6 +111,7 @@ CREATE TABLE `blood_bank` (
   `aviable_o_positive` int(5) NOT NULL,
   `aviable_o_negative` int(5) NOT NULL,
   `status` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
   `user_name` varchar(32) DEFAULT NULL,
   `password` varchar(32) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -110,12 +120,11 @@ CREATE TABLE `blood_bank` (
 -- Dumping data for table `blood_bank`
 --
 
-INSERT INTO `blood_bank` (`id`, `bank_name`, `email`, `phone`, `address`, `division`, `city`, `upazila`, `aviable_a_positive`, `aviable_a_negative`, `aviable_b_positive`, `aviable_b_negative`, `aviable_ab_positive`, `aviable_ab_negative`, `aviable_o_positive`, `aviable_o_negative`, `status`, `user_name`, `password`) VALUES
-(1, 'Noakhali Blood Bank', 'abdulaziz@gmail.com', '8129381932', 'New P. O Majide', 'Chittagong', 'Noakhali', 'Noakhali Sadar', 2, 2, 1, 1, 1, 0, 4, 0, '', 'aziz1k99', '4891743c6dbd7d9bbe73a77d348a9abb'),
-(2, 'BD Red Crescent Blood Bank', 'bdredcresent.bloodbank@email.org', '+88029139940', 'Aurongzeb Road, Mohammadpur', 'Dhaka', 'Dhaka', 'Dhaka City', 2, 2, 4, 2, 0, 0, 6, 2, '', 'redcresent123', 'dcdf32bbb38384b7d1db5c3fe612ce0f'),
-(3, 'Quantum Blood Bank', 'info@quantummethod.org.bd', '+8801714010869', 'Shantinagar', 'Dhaka', 'Dhaka', 'Dhaka City', 1, 2, 3, 2, 0, 1, 1, 0, '', 'quantum123', '827a971acba790e3ddae2216b8f3656e'),
-(4, 'xyz', 'xyz@some.com', '123', '232', 'Rangpur', 'Thakurgaon', 'Ranisankail', 0, 0, 0, 0, 0, 0, 0, 0, '', 'dxcdcd', 'f1b99d7cee95ddaecc375aa4c260dfbe'),
-(5, 'B_Bank', 'ba@a.com', '099738643846', 'adadss', 'Khulna', 'Kushtia', 'Kumarkhali', 0, 0, 0, 0, 0, 0, 0, 0, '', 'bbank', 'ff0b398632b6081fafaaedebb5a82f93');
+INSERT INTO `blood_bank` (`id`, `bank_name`, `email`, `phone`, `address`, `division`, `city`, `upazila`, `aviable_a_positive`, `aviable_a_negative`, `aviable_b_positive`, `aviable_b_negative`, `aviable_ab_positive`, `aviable_ab_negative`, `aviable_o_positive`, `aviable_o_negative`, `status`, `image`, `user_name`, `password`) VALUES
+(1, 'Noakhali Blood Bank', 'abdulaziz@gmail.com', '8129381932', 'New P. O Majide', 'Chittagong', 'Noakhali', 'Noakhali Sadar', 2, 2, 1, 1, 1, 0, 4, 0, '', '', 'aziz1k99', '4891743c6dbd7d9bbe73a77d348a9abb'),
+(2, 'BD Red Crescent Blood Bank', 'bdredcresent.bloodbank@email.org', '+88029139940', 'Aurongzeb Road, Mohammadpur', 'Dhaka', 'Dhaka', 'Dhaka City', 2, 2, 4, 2, 0, 0, 6, 2, '', '', 'redcresent123', 'dcdf32bbb38384b7d1db5c3fe612ce0f'),
+(3, 'Quantum Blood Bank', 'info@quantummethod.org.bd', '+8801714010869', 'Shantinagar', 'Dhaka', 'Dhaka', 'Dhaka City', 1, 2, 3, 2, 0, 1, 1, 0, '', '', 'quantum123', '827a971acba790e3ddae2216b8f3656e'),
+(5, 'B_Bank', 'ba@a.com', '099738643846', 'adadss', 'Khulna', 'Kushtia', 'Kumarkhali', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 'bbank', 'ff0b398632b6081fafaaedebb5a82f93');
 
 -- --------------------------------------------------------
 
@@ -173,13 +182,6 @@ CREATE TABLE `blood_request` (
   `patient_history` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `blood_request`
---
-
-INSERT INTO `blood_request` (`id`, `patient_name`, `blood_group`, `required_unit`, `gender`, `age`, `date_of_donation`, `hospital_name`, `hospital_address`, `division`, `city`, `upazila`, `contact_person`, `contact_number`, `patient_history`) VALUES
-(6, 'Rahim', 'O+', '6', 'male', 60, '30/08/2022', 'Labid Hospital', 'Dhanmondi', 'Dhaka', 'Gazipur', 'Gazipur Sadar', 'Karim', '01845682910', 'Blood Cancer');
-
 -- --------------------------------------------------------
 
 --
@@ -193,33 +195,6 @@ CREATE TABLE `contact` (
   `phone` varchar(32) NOT NULL,
   `message` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `doctor`
---
-
-CREATE TABLE `doctor` (
-  `id` int(255) NOT NULL,
-  `doctor_name` varchar(255) NOT NULL,
-  `qualifications` varchar(255) NOT NULL,
-  `chamber_time` varchar(255) NOT NULL,
-  `specialty` varchar(255) NOT NULL,
-  `doctor_reg_no` varchar(32) NOT NULL,
-  `hospital_id` int(32) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `doctor`
---
-
-INSERT INTO `doctor` (`id`, `doctor_name`, `qualifications`, `chamber_time`, `specialty`, `doctor_reg_no`, `hospital_id`) VALUES
-(1, 'Abdullah', 'MBBS', 'FRI 5 PM - 9 PM', 'General Physician', '23238', 1),
-(2, 'Maria', '', '', '', '', 1),
-(3, 'Maria', '', '', '', '', 2),
-(4, 'Maria', '', '', '', '', 0),
-(5, 'Khan', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -243,19 +218,17 @@ CREATE TABLE `donors_registration` (
   `upazila` varchar(20) NOT NULL,
   `last_donation` varchar(255) DEFAULT NULL,
   `user_name` varchar(32) NOT NULL,
-  `password` varchar(32) NOT NULL
+  `password` varchar(32) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `donors_registration`
 --
 
-INSERT INTO `donors_registration` (`id`, `frist_name`, `last_name`, `blood_group`, `gender`, `age`, `weight`, `email`, `phone`, `address`, `division`, `city`, `upazila`, `last_donation`, `user_name`, `password`) VALUES
-(2, 'Abdul', 'Aziz', 'O+', 'Male', 25, 60, 'abdulaziz1k99@gmail.com', '+8801842605509', 'Joynogor, Shout Fakirpur', 'Chittagong', 'Noakhali', 'Noakhali Sadar', '25/8/2021', 'aziz1k99', '4891743c6dbd7d9bbe73a77d348a9abb'),
-(3, 'Anisul', 'Haque', 'B+', 'Male', 55, 70, 'anis190@gmail.com', '+8801323456432', 'Kortbari', 'Chittagong', 'Comilla', '<option value=', '21/48/22', 'ikram123', '874a73a699b654417c5c621257cba097'),
-(4, 'Jahid', 'Hasan', 'O+', 'Male', 25, 55, 'jahid123@gmail.com', '01983384329', 'Safari park', 'Dhaka', 'Gazipur', 'Gazipur Sadar', 'Naver', 'jahid123', '98fb1c8e80ee4c84e9287016b7838708'),
-(5, 'Anisul', 'Haque', 'B+', 'Male', 55, 70, 'anis190@gmail.com', '+8801323456432', 'Kortbari', 'Chittagong', 'Comilla', '<option value=', '21/48/22', 'aziz123', '77f96d74d75182a5a4fa205443bbc7e0'),
-(6, 'Anisul', 'Haque', 'B+', 'Male', 55, 70, 'anis190@gmail.com', '+8801323456432', 'Kortbari', 'Chittagong', 'Comilla', '<option value=', '21/48/22', 'anis123', '432574eb722f0b57f568e4f99eedd4fd');
+INSERT INTO `donors_registration` (`id`, `frist_name`, `last_name`, `blood_group`, `gender`, `age`, `weight`, `email`, `phone`, `address`, `division`, `city`, `upazila`, `last_donation`, `user_name`, `password`, `image`) VALUES
+(2, 'Abdul', 'Aziz', 'O+', 'Male', 25, 60, 'abdulaziz1k99@gmail.com', '+8801842605509', 'Joynogor, Shout Fakirpur', 'Chittagong', 'Noakhali', 'Noakhali Sadar', '25/8/2021', 'aziz1k99', '4891743c6dbd7d9bbe73a77d348a9abb', ''),
+(4, 'Jahid', 'Hasan', 'O+', 'Male', 25, 55, 'jahid123@gmail.com', '01983384329', 'Safari park', 'Dhaka', 'Gazipur', 'Gazipur Sadar', '09/02/22', 'jahid123', '98fb1c8e80ee4c84e9287016b7838708', 'uploads/bdonners/profile-picture/user_id_4_1662217808.jpg');
 
 -- --------------------------------------------------------
 
@@ -279,7 +252,7 @@ CREATE TABLE `fire_services` (
 --
 
 INSERT INTO `fire_services` (`id`, `branch_name`, `phone`, `email`, `location`, `division`, `city`, `upazila`) VALUES
-(1, 'Mirpur Fire Service Station', '0173002229', 'mirpur.fireservice@info.com', 'Poradoha Mirpur Rd', 'Dhaka', 'Dhaka', 'Dhaka City');
+(7, 'aa', 'aa', 'aziz1k99@gamil.com', 'aa', 'Rangpur', 'Gaibandha', 'Palashbari');
 
 -- --------------------------------------------------------
 
@@ -333,7 +306,35 @@ CREATE TABLE `hospital` (
 --
 
 INSERT INTO `hospital` (`id`, `hospital_name`, `email`, `phone`, `type`, `address`, `division`, `city`, `upazila`, `user_name`, `password`) VALUES
-(1, 'BSMMU Hospital', 'bsmmu@info.com', '+9922526', 'General Medicine & Surgery', 'Shahbag, Dhaka-1000', 'Dhaka', 'Dhaka', 'Dhaka City', 'bsmmu', '5e36bd7582c3a4287a9ffd2ae53250b8');
+(1, 'BSMMU Hospital', 'bsmmu@info.com', '+9922526', 'General Medicine & Surgery', 'Shahbag, Dhaka-1000', 'Dhaka', 'Dhaka', 'Dhaka City', 'bsmmu', '5e36bd7582c3a4287a9ffd2ae53250b8'),
+(2, 'Prime Hospital', 'prime@info.com.bd', '01999922211', 'General Medicine and Surgery', 'Hospital Rd, Mejide', 'Dhaka', 'Dhaka', 'Dhaka City', 'prime123', 'be56667604b897f244ee00877f803eba');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hospital_doctors`
+--
+
+CREATE TABLE `hospital_doctors` (
+  `id` int(255) NOT NULL,
+  `doctor_name` varchar(255) NOT NULL,
+  `qulification` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `chambering_time` varchar(255) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `phone` varchar(32) NOT NULL,
+  `picture` varchar(255) NOT NULL,
+  `doctor_registration_no` int(255) NOT NULL,
+  `hospital_id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `hospital_doctors`
+--
+
+INSERT INTO `hospital_doctors` (`id`, `doctor_name`, `qulification`, `department`, `chambering_time`, `email`, `phone`, `picture`, `doctor_registration_no`, `hospital_id`) VALUES
+(8, 'Abdul Aziz', 'a', 'zz', 'a', 'abdulaziz@gmail.com', 'a', 'uploads/doctors/image/user_id_2_1662382976.jpg', 123, 2),
+(9, 'xyzaaaaaaaaaaa', 'MBBS; FCPS (Medicine)', 'Medicine', 'Friday [9:00am - 08:00pm]', 'abdulaziz@gmail.com', '123', '', 123000, 2);
 
 -- --------------------------------------------------------
 
@@ -357,11 +358,17 @@ CREATE TABLE `police` (
 --
 
 INSERT INTO `police` (`id`, `branch_name`, `phone`, `email`, `location`, `division`, `city`, `upazila`) VALUES
-(1, 'Adabor Police Station:', '3434', 'nk@email.com', 'asas', 'Dhaka', 'Dhaka', 'Dhaka City');
+(2, 'Adabor Police Station', '+8801713373183', 'ocadabor@dmp.gov.bd', 'House#105/A, Ring road, Shamoli,', 'Rangpur', 'Dhaka', 'Dhaka City');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `ambulance_registration`
@@ -400,12 +407,6 @@ ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `doctor`
---
-ALTER TABLE `doctor`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `donors_registration`
 --
 ALTER TABLE `donors_registration`
@@ -430,6 +431,12 @@ ALTER TABLE `hospital`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `hospital_doctors`
+--
+ALTER TABLE `hospital_doctors`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `police`
 --
 ALTER TABLE `police`
@@ -438,6 +445,12 @@ ALTER TABLE `police`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `ambulance_registration`
@@ -467,18 +480,12 @@ ALTER TABLE `blood_bank_application`
 -- AUTO_INCREMENT for table `blood_request`
 --
 ALTER TABLE `blood_request`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `contact`
 --
 ALTER TABLE `contact`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `doctor`
---
-ALTER TABLE `doctor`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
@@ -491,7 +498,7 @@ ALTER TABLE `donors_registration`
 -- AUTO_INCREMENT for table `fire_services`
 --
 ALTER TABLE `fire_services`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `fire_service_registration`
@@ -503,13 +510,19 @@ ALTER TABLE `fire_service_registration`
 -- AUTO_INCREMENT for table `hospital`
 --
 ALTER TABLE `hospital`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `hospital_doctors`
+--
+ALTER TABLE `hospital_doctors`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `police`
 --
 ALTER TABLE `police`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
