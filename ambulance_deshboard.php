@@ -10,6 +10,7 @@ $sql = "SELECT * FROM `ambulance_request` WHERE ambulance_id  = '$id'";
 
 $results = $con->query($sql);
 
+
 ?>
 
 
@@ -56,11 +57,9 @@ $results = $con->query($sql);
   
 
   <main>
-
-    <?php echo $id ?>
     <div class="container deshboard">
       <?php include_once 'partials/msg.php' ?>
-      <h2 class="my-2">Your Recived Request:</h2>
+      <h2 class="my-2">Your Recived Messages:</h2>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -127,6 +126,13 @@ $results = $con->query($sql);
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+  <script>
+    let img = document.getElementById("image")
+    img.addEventListener("change", function(){
+      document.getElementById('profile_picture_chage_form').submit()
+    })
+
+  </script>
 </body>
 
 </html>

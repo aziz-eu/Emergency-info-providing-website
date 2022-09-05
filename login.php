@@ -10,7 +10,7 @@
         'blood_donor' => 'donors_registration',
         'blood_bank_admin' => 'blood_bank',
         'ambulance_authority' => 'ambulance_registration',
-        'hospital_authority' => ''
+        'hospital_authority' => 'hospital'
     ];
 
     $username = trim($_POST['username']);
@@ -29,6 +29,9 @@
           break;
         case 'ambulance_registration':
           redirect('ambulance_deshboard.php', 'You are logged in successfully');
+          break;
+        case 'hospital':
+          redirect('hospital_dashboard.php', 'You are logged in successfully');
           break;
         
         default:
@@ -112,7 +115,7 @@
                           <div class="text-center registration-option">
                           <h6>Do Not Hava a Account? Register as :</h6>
                           <p><a href="./ambulance_registration.php">Ambulance Admin</a>&emsp;|&emsp;<a href="blood_bank_registration.php">Blood Bank Admin</a>&emsp;|&emsp;<a href="donor_registration.php">Blood Donor</a>&emsp;</p>
-                          <p> <a href="">Hospital Admin</a>&emsp; |&emsp;<a href="./fire_S_registration.php">Fire Service Admin</a></p>
+                          <p> <a href="./hospital_registration.php">Hospital Admin</a>&emsp; |&emsp;<a href="./fire_S_registration.php">Fire Service Admin</a></p>
                         </div>
 
                     </div>

@@ -83,14 +83,18 @@ else if (isset($_POST['send_message'])) {
                                 <li>Email: <?php echo $row['email'] ?></li>
                                 <li>Address : <?php echo $row['address'] ?>, <?php echo $row['upazila'] ?> , <?php echo $row['city'] ?></li>
                                 </li>
-                                <li>Status : Replay with in a 1 hour</li>
+                                <li>Status :<?php echo $row['status'] ?></li>
+                                <li>Available Ambulances :</li>
+                                <li>&emsp;&emsp;AC Ambulance&nbsp; : <?php echo $row['ac'] ?>&nbsp;&emsp;&emsp;&emsp;&nbsp;&emsp;Non-AC Ambulance &nbsp;: <?php echo $row['non_ac'] ?></li>
+                                <li>&emsp;&emsp;ICU Ambulance : <?php echo $row['icu'] ?>&nbsp;&emsp;&emsp;&emsp;&emsp;HDU Ambulance &emsp;&emsp;: <?php echo $row['hdu'] ?></li>
+                                <li>&emsp;&emsp;Air Ambulance &nbsp;: <?php echo $row['air'] ?>&nbsp;&emsp;&emsp;&emsp;&emsp;Frezing Ambulance &nbsp;&nbsp;&nbsp;: <?php echo $row['frezing'] ?></li>
                             </ul>
 
                             <div class="text-center my-3">
 
                                 <!-- Button trigger modal -->
-                                <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#bloodApplication">
-                                    Send Messahe
+                                <button type="submit" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ambulance_id_<?php echo $row['id'] ?>">
+                                    Send Message
                                 </button>
 
 
@@ -101,11 +105,11 @@ else if (isset($_POST['send_message'])) {
 
 
                     </div>
-                    <div class="modal fade" id="bloodApplication" tabindex="-1" aria-labelledby="bloodApplicationLabel" aria-hidden="true">
+                    <div class="modal fade" id="ambulance_id_<?php echo $row['id'] ?>" tabindex="-1" aria-labelledby="bloodApplicationLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="bloodApplicationLabel">Modal title</h5>
+                                    <h5 class="modal-title" id="bloodApplicationLabel"><?php echo $row['org_name'] ?></h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">

@@ -1,4 +1,3 @@
-
 <?php
 include_once 'includes/function.php';
 include_once 'includes/session.php';
@@ -46,7 +45,7 @@ if (isset($_POST['fireServiceSerch'])) {
             <div class="row">
                 <?php while ($row = $results->fetch_assoc()) : ?>
 
-                    <div class="col-6  d-block d-lg-flex">
+                    <div class="col-lg-6  d-block d-lg-flex">
                         <div class="blook-bank-card propertiys">
                             <h2><?php echo $row['branch_name'] ?></h2>
                             <ul>
@@ -56,15 +55,17 @@ if (isset($_POST['fireServiceSerch'])) {
                                 </li>
                             </ul>
 
-                           
+
                         </div>
 
 
                     </div>
+
+                <?php endwhile ?>
             </div>
-        <?php endwhile ?>
+
         </div>
-        </div>
+
     </main>
 
     <?php include_once 'partials/footer.php' ?>

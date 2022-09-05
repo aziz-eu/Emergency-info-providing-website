@@ -87,6 +87,7 @@
            
         </div>
           <div class="col-lg-6 mb-5 form-content py-5">
+            <?php include_once ('./partials/msg.php') ?>
             <form method="POST" action="./police_search.php">
              
               <label for="division" class="form-lable">Devision</label>

@@ -1,3 +1,30 @@
+<?php 
+include_once 'includes/function.php';
+include_once 'includes/session.php';
+include_once 'config/db.php';
+
+
+if(isset($_POST['contactForm'])){
+    //pr($_POST, true);
+    $name =  trim($_POST['name']);
+    $email =  trim($_POST['email']);
+    $phone =  trim($_POST['phone']);
+    $message =  trim($_POST['message']);
+
+    $sql = "INSERT INTO `contact`(`name`, `email`, `phone`, `message`) VALUES ('$name','$email','$phone','$message')";
+
+    if($con->query($sql) == true  ){
+      redirect('contact.php', 'Thank You. We will replay you as soon as possiable');
+    }
+    else{
+      echo "Error: " . $sql . "<br>" . $con->error;
+    }
+
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,6 +100,7 @@
     <main>
         <div id="blood-request">
             <div class="container">
+            <?php include_once 'partials/msg.php' ?>
                 <div class="row">
                     <div class="col-lg-6 d-none d-lg-block">
                         <div class="pt-2 position-fixed ">
@@ -89,9 +117,9 @@
                     </div>
                     <div class="col-lg-6 mb-5 form-content py-5">
 
-                        <form>
-                            <label for="fristname" class="form-lable">Your Name:</label>
-                            <input type="text" class="form-control" name="fristname" id="fristName" required
+                        <form method="POST" action="./contact.php">
+                            <label for="name" class="form-lable">Your Name:</label>
+                            <input type="text" class="form-control" name="name" id="name" required
                                 placeholder="e.g. Jack">
                             <label for="email" class="form-lable">E-mail:</label>
                             <input type="email" class="form-control" name="email" id="email" required
@@ -99,13 +127,13 @@
                             <label for="phone" class="form-lable">Phone:</label>
                             <input type="tel" class="form-control" name="phone" id="phone" required
                                 placeholder="e.g 01555566677">
-                            <label for="patient-info" class="form-lable">Your Message</label>
-                            <textarea name="patient-info" class="form-control" id="" cols="30" rows="8"
+                            <label for="message" class="form-lable">Your Message</label>
+                            <textarea name="message" class="form-control" id="" cols="30" rows="8"
                                 placeholder=""></textarea>
                             <div class="text-center my-3">
                                 <div class="text-center my-3">
 
-                                    <button type="submit" class="btn btn-dark">Send</button>
+                                    <button type="submit" name="contactForm" class="btn btn-dark">Send</button>
                                 </div>
 
                         </form>

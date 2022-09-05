@@ -138,21 +138,25 @@ a:hover {
 /* Donors profile */
 
 .picture {
-  min-height: 10vh;
+  /* min-height: 10vh; */
   /* border: 2px solid red; */
-  margin: 2rem 0 1rem 0;
+  /* margin: 2rem 0 1rem 0;
   border: 2px solid green;
   max-width: 16vw;
   max-height: 25vh;
   min-width: 16vw;
-  min-height: 20vh;
+  min-height: 20vh; */
 }
 
 .user-pic {
-  max-width: 16vw;
-  max-height: 25vh;
-  min-width: 30v;
-  min-height: 20vh;
+  margin-top: 15px;
+  height: 168px;
+  width: 168px;
+  min-width: 168px;
+  min-height: 168px;
+  border-bottom: 2px solid #e71414;
+  border-right: 2px solid #12947f;
+  overflow: hidden;
 }
 .propertiys ul {
   padding: 0;
@@ -178,7 +182,14 @@ a:hover {
   box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
   margin: 2rem 0;
   padding: .2rem 1rem;
-  width: 48vw;
+  min-width: 42.6vw;
+ 
+}
+.abubulance_edit{
+  font-size: 18px;
+  font-weight: 500;
+  padding-top: 25px;
+  text-align: center;
 }
 
 
@@ -193,4 +204,64 @@ a:hover {
 .registration-option p a:hover{
     color: #e71414;
 
+}
+
+/* Profile Pic Btn */
+
+.profile-pic-btn{
+  color: white;
+  padding: 10px 5px;
+  background-color: #12947f;
+}
+.profile-pic-btn:hover{
+  color: white;
+  background-color: #0d7262;
+}
+
+
+/* aviable_blood */
+.aviable_blood{
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+.show_blood{
+  display: flex;
+  justify-content: space-between;
+  line-height: .01;
+}
+
+
+.admin-dashboard{
+
+  min-height: 80vh;
+}
+
+.adimin-services{
+  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+  margin: 2rem 0;
+  padding: .2rem;
+  min-height: 75vh;
+}
+
+.admin_panal{
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+#doctorList{
+  font-size: 14px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.doctor_btn{
+  padding: 5px;
+  display: inline;
 }
