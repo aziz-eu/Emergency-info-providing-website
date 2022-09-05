@@ -75,7 +75,7 @@ if (isset($_GET['delete'])) {
 
             <div>
 
-                <table class="table table-striped" id="messages">
+                <table class="table table-striped" id="blood_req_table">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
@@ -109,7 +109,7 @@ if (isset($_GET['delete'])) {
                                 <td><?php echo $row['contact_number'] ?></td>
                                 <td>
                                     
-                                    <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class=" fa-solid fa-trash"></i></button>
+                                    <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class="delete fa-solid fa-trash" id="<?php echo $row['id'] ?>"></i></button>
                                 </td>
 
 
@@ -173,7 +173,7 @@ if (isset($_GET['delete'])) {
 
     <script>
         $(document).ready(function() {
-            $('#messages').DataTable();
+            $('#blood_req_table').DataTable();
         });
     </script>
 
@@ -183,13 +183,13 @@ if (isset($_GET['delete'])) {
         Array.from(deletes).forEach((element) => {
             element.addEventListener("click", (e) => {
                 console.log("edit ");
-                let id = e.target.id.substr(0);
-                console.log(id)
+                let delId = e.target.id;
+                console.log(delId)
 
                 if (confirm("Are you sure you want to delete!")) {
                     console.log("yes");
-                    window.location = `blood_request_info.php?delete=${id}`;
-                    // TODO: Create a form and use post request to submit a form
+                    window.location = `blood_request_info.php?delete=${delId}`;
+
                 } else {
                     console.log("no");
                 }

@@ -265,3 +265,7 @@ a:hover {
   padding: 5px;
   display: inline;
 }
+
+.button > i {
+  pointer-events: none;
+} 

@@ -7,6 +7,7 @@ $sql = "SELECT * FROM `donors_registration`";
 $results = $con->query($sql);
 
 
+
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
@@ -108,7 +109,7 @@ if (isset($_GET['delete'])) {
                                 
                                 <td>
                                     
-                                    <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class=" fa-solid fa-trash"></i></button>
+                                    <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class="delete fa-solid fa-trash" id="<?php echo $row['id'] ?>"></i></button>
                                 </td>
 
 
@@ -185,12 +186,12 @@ if (isset($_GET['delete'])) {
         Array.from(deletes).forEach((element) => {
             element.addEventListener("click", (e) => {
                 console.log("edit ");
-                let id = e.target.id.substr(1,);
-                console.log(id)
+                let delId = e.target.id;
+                console.log(delId)
 
                 if (confirm("Are you sure you want to delete!")) {
                     console.log("yes");
-                    window.location = `blood_donors_info.php?delete=${id}`;
+                    window.location = `blood_donors_info.php?delete=${delId}`;
                     // TODO: Create a form and use post request to submit a form
                 } else {
                     console.log("no");

@@ -13,7 +13,7 @@ if (isset($_GET['delete'])) {
     // $result = mysqli_query($conn, $sql);
     if ($con->query($sql) == true) {
         //   $sql = "SELECT * FROM `blood_bank` WHERE id = '$id' LIMIT 1";
-        //   $result = $con->query($sql);
+        //   $result = $con->query($sql);`
         //   $_SESSION['user']  = $result->fetch_assoc();
         redirect('messages.php', 'Message Deleted.');
     } else {
@@ -98,7 +98,7 @@ if (isset($_GET['delete'])) {
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['phone'] ?></td>
                                 <td><?php echo $row['message'] ?></td>
-                                <td><button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class=" fa-solid fa-trash"></i></button></td>
+                                <td> <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class="delete fa-solid fa-trash" id="<?php echo $row['id'] ?>"></i></button></td>
 
 
 

@@ -69,13 +69,13 @@ if (isset($_POST['editDoctor'])) {
 if (isset($_GET['delete'])) {
     $doctor_id = $_GET['delete'];
 
-    // $sql = "DELETE FROM `hospital_doctors` WHERE `id` = '$doctor_id' AND  	`hospital_id` = '$id' ";
+    $sql = "DELETE FROM `hospital_doctors` WHERE `id` = '$doctor_id' AND  	`hospital_id` = '$id' ";
     // $result = mysqli_query($conn, $sql);
     if ($con->query($sql) == true) {
         //   $sql = "SELECT * FROM `hospital_doctors`";
         //   $result = $con->query($sql);
         //   $_SESSION['user']  = $result->fetch_assoc();
-        // redirect('hospital_show_doctors.php', ' Successfullay Deleted.');
+        redirect('hospital_show_doctors.php', ' Successfullay Deleted.');
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
     }
@@ -175,7 +175,9 @@ if (isset($_GET['delete'])) {
                                 <td><img src="<?php echo $row['picture'] ?>" alt="" height="40px" width="40px"></td>
                                 <td><button type="button" class="btn btn-sm btn-dark doctor_btn" data-bs-toggle="modal" data-bs-target="#editFire_<?php echo $row['id'] ?>">
                                         <i class="fa-solid fa-pen-to-square"></i>
-                                    </button>  <button class='delete btn btn-sm btn-danger doctor_btn' id="<?php echo $row['id'] ?>"><i class=" fa-solid fa-trash"></i></button></td>
+                                    </button>  <button class='delete btn btn-sm btn-danger doctor_btn' id="<?php echo $row['id'] ?>"><i class="delete fa-solid fa-trash" id="<?php echo $row['id'] ?>" ></i></button></td>
+
+
 
 
                             </tr>
@@ -183,7 +185,7 @@ if (isset($_GET['delete'])) {
 
                         </tbody>
 
-                        
+
                         <div class=" modal fade" id="editFire_<?php echo $row['id'] ?>" tabindex="-1" aria-labelledby="edit_fire_service_info" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -266,14 +268,14 @@ if (isset($_GET['delete'])) {
         deletes = document.getElementsByClassName('delete');
         Array.from(deletes).forEach((element) => {
             element.addEventListener("click", (e) => {
-                let id = e.target.id.substr(0);
-                console.log(id)
+                let delId = e.target.id;
+                console.log(delId)
 
-                if (confirm("Are you sure you want to delete!")) {
+                 if (confirm("Are you sure you want to delete!")) {
                     console.log("yes");
-                    window.location = `hospital_show_doctors.php?delete=${id}`;
-                } else {
-                    console.log("no");
+                    window.location = `hospital_show_doctors.php?delete=${delId}`;
+                 } else {
+                   console.log("no");
                 }
             })
         })

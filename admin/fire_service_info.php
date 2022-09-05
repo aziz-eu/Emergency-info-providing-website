@@ -125,7 +125,7 @@ if (isset($_POST['editFireSerInfo'])) {
                                     <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#editFire_<?php echo $row['id'] ?>">
                                         Edit
                                     </button>
-                                    <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class=" fa-solid fa-trash"></i></button>
+                                    <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class="delete fa-solid fa-trash" id="<?php echo $row['id'] ?>"></i></button>
                                 </td>
 
 
@@ -267,7 +267,6 @@ if (isset($_POST['editFireSerInfo'])) {
         if (confirm("Are you sure you want to delete this note!")) {
           console.log("yes");
           window.location = `fire_service_info.php?delete=${id}`;
-          // TODO: Create a form and use post request to submit a form
         } else {
           console.log("no");
         }

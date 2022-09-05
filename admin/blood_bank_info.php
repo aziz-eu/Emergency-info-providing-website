@@ -180,13 +180,13 @@ if (isset($_GET['delete'])) {
         Array.from(deletes).forEach((element) => {
             element.addEventListener("click", (e) => {
                 console.log("edit ");
-                let id = e.target.id.substr(0);
-                console.log(id)
+                let delId = e.target.id.substr(0);
+              
 
                 if (confirm("Are you sure you want to delete!")) {
                     console.log("yes");
-                    window.location = `blood_bank_info.php?delete=${id}`;
-                    // TODO: Create a form and use post request to submit a form
+                    window.location = `blood_bank_info.php?delete=${delId}`;
+                    
                 } else {
                     console.log("no");
                 }

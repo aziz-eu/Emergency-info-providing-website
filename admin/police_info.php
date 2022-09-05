@@ -125,7 +125,7 @@ if (isset($_POST['editFireSerInfo'])) {
                                     <button type="button" class="btn btn-sm btn-dark" data-bs-toggle="modal" data-bs-target="#editFire_<?php echo $row['id'] ?>">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </button>
-                                    <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class=" fa-solid fa-trash"></i></button>
+                                    <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class="delete fa-solid fa-trash" id="<?php echo $row['id'] ?>"></i></button>
                                 </td>
 
 
