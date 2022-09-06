@@ -94,7 +94,7 @@ guard('index.php', 'You must login first');
                                 </h2>
                                 <div id="hospital_department" class="accordion-collapse collapse" aria-labelledby="hospital_heading" data-bs-parent="#accordionFlushExample">
                                     <div class="accordion-body">
-                                        <p>Hospital Info</p>
+                                        <a href="hospital_info.php">Hospital Info</a>
                                     </div>
                                 </div>
                             </div>

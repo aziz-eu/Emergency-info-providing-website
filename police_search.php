@@ -60,9 +60,9 @@ if (isset($_POST['policeSerch'])) {
 
 
                     </div>
+                    <?php endwhile ?>
             </div>
-        <?php endwhile ?>
-        </div>
+        
         </div>
     </main>
 
