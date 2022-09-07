@@ -126,7 +126,7 @@
             </div>
           </div>
           <div class="col-6 search-btn mt-5">
-            <div class="input-group rounded">
+            <!-- <div class="input-group rounded">
               <input
                 type="search"
                 class="form-control rounded"
@@ -139,12 +139,40 @@
                   <i class="fas fa-search"></i>
                 </span>
               </button>
-            </div>
+            </div> -->
+
+           <div >
+           <form method="POST" action="">
+             
+             <!-- <label for="division" class="form-lable">Devision</label> -->
+             <select class="form-select" name="division" id="division">
+               <option value="select-message" selected>
+                 Plese Select Your Devision
+               </option>
+             </select>
+               
+                 <!-- <label for="city" class="form-lable">City</label> -->
+                 <select class="form-select my-1" name="city" id="city">
+                   <option value="select-message" selected>
+                     Plese Select Your City
+                   </option>
+                 </select>
+                 <!-- <label for="upazila" class="form-lable">Upazila</label> -->
+                 <select class="form-select" name="upazila" id="upazila">
+                   <option value="select-message" selected>
+                     Plese Select Your Upazila
+                   </option>
+                 </select>       
+             <div class="text-center mt-3 mb-5">
+               <button type="submit" name="fireServiceSerch" class="btn btn-dark">Filter</button>
+             </div>
+           </form>
+           </div>
+          
           </div>
         </div>
         <div class="row">
           <div class="col-lg-10">
-            <h4 class="my-3">Top Govt. Hospitals</h4>
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -228,86 +256,8 @@
           </div>
 
           
-          <div class="col-lg-10 mt-5 mb-3">
-            <h4 class="my-3">Top Private Hospitals</h4>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Hospital Name</th>
-                  <th scope="col">Type</th>
-                  <th scope="col">Location</th>
-                  <th scope="col">Doctor List</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Check Doctor List</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Doctor List</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Doctor List</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Doctor List</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Doctor List</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Doctor List</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Doctor List</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Doctor List</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Doctor List</a></td>
-                </tr>
-                <tr>
-                  <th scope="row">Dhaka Medical Collage Hospital</th>
-                  <td>General Medicin & Sergary</td>
-                  <td>Mirpur 102 , Dhaka</td>
-                  <td><a href="">Doctor List</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
 
-        <div class="d-flex justify-content-end" >
-          <a href="./hospital_all.php" class="mb-3 btn btn-outline-dark">Show All Hospital</a>
-        </div>
       </div>
     </main>
 
@@ -363,16 +313,13 @@
             ><i class="fab fa-github"></i
           ></a>
         </section>
-        <!-- Section: Social media -->
       </div>
-      <!-- Grid container -->
 
-      <!-- Copyright -->
       <div class="text-center p-3 footer-last">
         © 2022 Copyright
         <a class="text-white" href="/"></a>
       </div>
-      <!-- Copyright -->
+
     </footer>
 
     <script
@@ -385,5 +332,6 @@
       integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

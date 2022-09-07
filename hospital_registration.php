@@ -17,7 +17,7 @@ if(isset($_POST['hospitalRegForm'])){
     $username = trim( $_POST['username']);
     $password =  md5(trim($_POST['password']));
 
-    $sql = "INSERT INTO `hospital` ( `hospital_name`, `email`, `phone`,`type`, `address`, `division`, `city`, `upazila`, `user_name`, `password`) VALUES ('$hospital_name', '$email', '$phone', '$hospital_type', '$address', '$division', '$city', '$upazila', '$username', '$password' );";
+    $sql = "INSERT INTO `hospital` ( `hospital_name`, `email`, `phone`,`type`, `address`, `division`, `city`, `upazila`, `user_name`, `password`) VALUES ('$hospital_name', '$email', '$phone', '$hospital_type', '$address', '$division', '$city', '$upazila', '$username', '$password' )";
 
 
     if($con->query($sql) == true  ){
@@ -80,7 +80,7 @@ if(isset($_POST['hospitalRegForm'])){
               </p>
             </div>
             <div class="col-lg-6 mb-5 form-content py-5">
-              <form method="post" action="./hospital_registration.php">
+              <form method="POST" action="./hospital_registration.php">
                 <label for="hospital-name" class="form-lable">
                   Hospital Name</label>
                 <input

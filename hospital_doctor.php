@@ -30,9 +30,25 @@
                     <form action="">
                         <div class="d-flex">
                         <select class="form-select" name="ambulance_type" id="ambulance_type">
-                            <option value="AC" selected>Select Deparment</option>
+                            <option value="" selected>Select Deparment</option>
+                            <option value="Anesthesiology">Anesthesiology</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Child">Child</option>
+                            <option value="Dental">Dental</option>
+                            <option value="Diabetes">Diabetes</option>
+                            <option value="ENT">ENT (Ear, Nose & Throat)</option>
+                            <option value="Gastroenterology">Gastroenterology</option>
+                            <option value="Gynae">Gynae & Obs. Specialist & Surgeon</option>
+                            <option value="Hepato-Biliary Surgery">Hepato-Biliary Surgery</option>
+                            <option value="Medicine">Medicine</option>
+                            <option value="Neuromedicine">Neuromedicine</option>
+                            <option value="Nutrition">Nutrition</option>
+                            <option value="Oncology">Oncology</option>
+                            <option value="Pulmonology">Pulmonology </option>
+                            <option value="Urology Surgeon">Urology Surgeon</option>
+                            
                         </select>
-                        <button type="submit" name="send_message" class="btn btn-dark ms-2">filter</button>
+                        <button type="submit" name="" class="btn btn-dark ms-2">filter</button>
                         </div>
                     </form>
 
