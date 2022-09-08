@@ -20,7 +20,7 @@ if (isset($_GET['delete'])) {
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
     }
-  }
+}
 
 if (isset($_POST['editFireSerInfo'])) {
     //pr($_POST, true);
@@ -251,28 +251,30 @@ if (isset($_POST['editFireSerInfo'])) {
 
     <script>
         $(document).ready(function() {
-            $('#messages').DataTable();
+            $('#messages').DataTable({
+                "lengthChange": false
+            });
         });
     </script>
 
 
-<script>
-    deletes = document.getElementsByClassName('delete');
-    Array.from(deletes).forEach((element) => {
-      element.addEventListener("click", (e) => {
-        console.log("edit ");
-        let id = e.target.id.substr(0);
-        console.log(id)
+    <script>
+        deletes = document.getElementsByClassName('delete');
+        Array.from(deletes).forEach((element) => {
+            element.addEventListener("click", (e) => {
+                console.log("edit ");
+                let id = e.target.id.substr(0);
+                console.log(id)
 
-        if (confirm("Are you sure you want to delete this note!")) {
-          console.log("yes");
-          window.location = `fire_service_info.php?delete=${id}`;
-        } else {
-          console.log("no");
-        }
-      })
-    })
-  </script>
+                if (confirm("Are you sure you want to delete this note!")) {
+                    console.log("yes");
+                    window.location = `fire_service_info.php?delete=${id}`;
+                } else {
+                    console.log("no");
+                }
+            })
+        })
+    </script>
 
 
     <script src="../js/script.js"></script>

@@ -137,7 +137,7 @@ a:hover {
 
 /* Donors profile */
 
-.picture {
+/* .picture { */
   /* min-height: 10vh; */
   /* border: 2px solid red; */
   /* margin: 2rem 0 1rem 0;
@@ -146,7 +146,7 @@ a:hover {
   max-height: 25vh;
   min-width: 16vw;
   min-height: 20vh; */
-}
+/* } */
 
 .user-pic {
   margin-top: 15px;
@@ -261,11 +261,12 @@ a:hover {
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
+.doctor-image{
+  height: 136px;
+  width: 136px;
+}
+
 .doctor_btn{
   padding: 5px;
   display: inline;
 }
-
-.button > i {
-  pointer-events: none;
-} 

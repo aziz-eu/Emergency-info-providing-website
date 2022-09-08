@@ -24,7 +24,7 @@ if(isset($_POST['reqForm'])){
     $sql = "INSERT INTO blood_request(patient_name, blood_group, required_unit, gender, age, date_of_donation, hospital_name, hospital_address, division, city, upazila, contact_person, contact_number, patient_history) VALUES('$patient_name', '$blood_group', '$required_unit', '$gender', '$age', '$date_of_donation', '$hospital_name', '$hospital_address',  '$division', '$city', '$upazila', '$contact_person', '$contact_number', '$patient_history' )";
 
     if($con->query($sql) == true  ){
-      redirect('login.php', 'Your Request is Successfully Submited');
+      redirect('request_blood.php', 'Your Request is Successfully Submited');
     }
     else{
       echo "Error: " . $sql . "<br>" . $con->error;
@@ -86,6 +86,7 @@ if(isset($_POST['reqForm'])){
               </p>
             </div>
             <div class="col-lg-6 mb-5 form-content py-5">
+              <?php include_once('./partials/msg.php') ?>
               <form method="post" action="request_blood.php">
                 <label for="patient-name" class="form-lable"
                   >Patient Name</label

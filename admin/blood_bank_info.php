@@ -94,7 +94,6 @@ if (isset($_GET['delete'])) {
                     <tbody>
                         <?php while ($row = $results->fetch_assoc()) : ?>
                             <tr>
-
                                 <td><?php echo $row['id'] ?></td>
                                 <td><?php echo $row['bank_name']?></td>
                                 <td><?php echo $row['email'] ?></td>

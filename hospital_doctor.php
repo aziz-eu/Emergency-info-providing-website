@@ -1,3 +1,51 @@
+<?php
+
+include_once 'includes/function.php';
+include_once 'includes/session.php';
+include_once 'config/db.php';
+$hid = $_GET['h_id'];
+
+$find_hospital_name = "SELECT hospital_name FROM `hospital` WHERE `id` = '$hid'";
+$hospital_name = $con->query($find_hospital_name);
+
+$department = "SELECT DISTINCT department FROM `hospital_doctors` WHERE `hospital_id` = '$hid' ORDER BY department ASC";
+$departments = $con->query($department);
+
+
+
+
+if (!isset($_GET['h_id'])) {
+    redirect('hospital.php', 'No results found', 'danger');
+}
+
+
+
+
+if (isset($_GET['h_id'])) {
+
+    $sql = "SELECT * FROM `hospital_doctors` WHERE `hospital_id` = '$hid' ";
+    $results = $con->query($sql);
+} else {
+    redirect('hospital.php');
+}
+
+if (isset($_GET['filterDepartment'])) {
+
+    $department = trim($_GET['department']);
+    $hospital_id = trim($_GET['h_id']);
+
+
+
+    if ($department!=NULL){
+  
+    $sql = "SELECT * FROM `hospital_doctors` WHERE `hospital_id` = '$hospital_id' AND  `department` LIKE '$department' ";
+    $results = $con->query($sql);
+    }
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,34 +69,25 @@
 
                 <!-- Doctor logo -->
                 <div class="col-3 mx-5 flat-image">
-                    <div class="flat-image ">
+                    <div class="flat-image">
                         <img src="img/medical-team.png" alt="">
                     </div>
                 </div>
-                <div class="col-6 my-2"></div>
+                <div class="col-lg-6 my-2"></div>
                 <div class="col-4">
-                    <form action="">
+                    <form action="hospital_doctor.php" method="get">
+                        <input type="hidden" name="h_id" value="<?php echo $hid ?>">
                         <div class="d-flex">
-                        <select class="form-select" name="ambulance_type" id="ambulance_type">
-                            <option value="" selected>Select Deparment</option>
-                            <option value="Anesthesiology">Anesthesiology</option>
-                            <option value="Cardiology">Cardiology</option>
-                            <option value="Child">Child</option>
-                            <option value="Dental">Dental</option>
-                            <option value="Diabetes">Diabetes</option>
-                            <option value="ENT">ENT (Ear, Nose & Throat)</option>
-                            <option value="Gastroenterology">Gastroenterology</option>
-                            <option value="Gynae">Gynae & Obs. Specialist & Surgeon</option>
-                            <option value="Hepato-Biliary Surgery">Hepato-Biliary Surgery</option>
-                            <option value="Medicine">Medicine</option>
-                            <option value="Neuromedicine">Neuromedicine</option>
-                            <option value="Nutrition">Nutrition</option>
-                            <option value="Oncology">Oncology</option>
-                            <option value="Pulmonology">Pulmonology </option>
-                            <option value="Urology Surgeon">Urology Surgeon</option>
-                            
-                        </select>
-                        <button type="submit" name="" class="btn btn-dark ms-2">filter</button>
+                            <select class="form-select" name="department" id="department">
+                                <option value="" selected>Select Department</option>
+                                <?php while ($row = $departments->fetch_assoc()) : ?>
+                                    <option value="<?php echo $row['department']; ?>">
+                                        <?php echo $row['department']; ?>
+
+                                    </option>
+                                <?php endwhile ?>
+                            </select>
+                            <button type="submit" name="filterDepartment" class="btn btn-dark ms-2">filter</button>
                         </div>
                     </form>
 
@@ -56,33 +95,44 @@
                     </select>
                 </div>
             </div>
-            <h3>Doctor List of : BSMMU Hospital </h3>
+
+            <h3>Doctor List of : <?php while ($row = $hospital_name->fetch_assoc()) {
+                                        echo $row['hospital_name'];
+                                        break;
+                                    }  ?> </h3>
             <div class="row">
 
+                <?php while ($row = $results->fetch_assoc()) : ?>
+                    <div class="col-lg-6 d-block d-lg-flex">
 
-                <div class="col-6  d-block d-lg-flex">
-                    <div class="blook-bank-card propertiys">
-                        <div class="row">
-                            <div class="col-4">
-                                <img src="img/man.jpg" alt="">
-                            </div>
-                            <div class="col-8">
-                                <h4>Dr. Abdullah</h4>
-                                <p>Qualifications: MBBS, FCPS</p>
-                                <p>Specialty: Consultant, Pediatric Surgery </p>
-                                <p>Chamber Time: 5.00 PM -7.00 PM </p>
-                                <p>Off Day: Friday & Govt. Holidays </p>
+                        <div class="blook-bank-card propertiys">
+
+                            <div class="row">
+                                <div class="col-4">
+                                    <img class="doctor-image" src="<?php echo $row['picture'] ?>" alt="">
+                                </div>
+                                <div class="col-8">
+
+                                    <h4><?php echo $row['doctor_name'] ?></h4>
+                                    <p>Qualifications:<?php echo $row['qulification'] ?></p>
+                                    <p>Specialty: <?php echo $row['department'] ?></p>
+                                    <p>Chamber Time: <?php echo $row['chambering_time'] ?></p>
+
+
+                                </div>
+
                             </div>
 
                         </div>
 
+
+
                     </div>
+                <?php endwhile ?>
 
-
-                </div>
             </div>
         </div>
-        </div>
+
     </main>
 
     <?php include_once 'partials/footer.php' ?>

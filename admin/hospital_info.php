@@ -72,7 +72,7 @@ if (isset($_GET['delete'])) {
 
     <main>
         <div class="container">
-            <?php include_once ('../partials/msg.php') ?>
+            <?php include_once('../partials/msg.php') ?>
             <h3>Blood Requester Info Info</h3>
 
             <div>
@@ -80,7 +80,7 @@ if (isset($_GET['delete'])) {
                 <table class="table table-striped" id="blood_req_table">
                     <thead>
                         <tr>
-                           
+
                             <th scope="col">Hospital Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
@@ -96,16 +96,16 @@ if (isset($_GET['delete'])) {
                         <?php while ($row = $results->fetch_assoc()) : ?>
                             <tr>
 
-                                
+
                                 <td><?php echo $row['hospital_name'] ?></td>
                                 <td><?php echo $row['email'] ?></td>
                                 <td><?php echo $row['phone'] ?></td>
                                 <td><?php echo $row['type'] ?></td>
                                 <td><?php echo $row['city'] ?></td>
                                 <td><?php echo $row['upazila'] ?></td>
-                
+
                                 <td>
-                                    
+
                                     <button class='delete btn btn-sm btn-danger' id="<?php echo $row['id'] ?>"><i class="delete fa-solid fa-trash" id="<?php echo $row['id'] ?>"></i></button>
                                 </td>
 
@@ -170,7 +170,9 @@ if (isset($_GET['delete'])) {
 
     <script>
         $(document).ready(function() {
-            $('#blood_req_table').DataTable();
+            $('#blood_req_table').DataTable({
+             "lengthChange": false
+            });
         });
     </script>
 
