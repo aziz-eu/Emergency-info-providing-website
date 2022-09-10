@@ -92,7 +92,7 @@ if (isset($_POST['add_doctor'])) {
                             <a class="nav-link" aria-current="page" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="hospital_profile.php">Hospital Profile</a>
+                            <a class="nav-link" href="hospitalProfile.php">Hospital Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="hospital_addDoctor.php">Add Doctor</a>

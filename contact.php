@@ -9,7 +9,7 @@ if(isset($_POST['contactForm'])){
     $name =  trim($_POST['name']);
     $email =  trim($_POST['email']);
     $phone =  trim($_POST['phone']);
-    $message =  trim($_POST['message']);
+    $message =  mysqli_real_escape_string($con,trim($_POST['message']));
 
     $sql = "INSERT INTO `contact`(`name`, `email`, `phone`, `message`) VALUES ('$name','$email','$phone','$message')";
 

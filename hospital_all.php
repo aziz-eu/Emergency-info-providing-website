@@ -121,7 +121,7 @@ if (isset($_GET['filterLocation'])) {
 
   <main>
     <div class="container">
-      <?php include_once('./partials/msg.php') ?>
+     <?php // include_once('./partials/msg.php') ?>
       <div class="row">
         <div class="col-lg-6 mt-4 text-start">
           <div>
@@ -149,7 +149,7 @@ if (isset($_GET['filterLocation'])) {
                 <div class="col-6">
                   <select class="form-select" name="division" id="division">
                     <option value="" selected>
-                      Select Your Division
+                      Select Your Division &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </option>
                   </select>
                 </div>
@@ -157,7 +157,7 @@ if (isset($_GET['filterLocation'])) {
                 <div class="col-6">
                   <select class="form-select" name="city" id="city">
                     <option value="" selected>
-                      Select Your City
+                      Select Your City &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </option>
                   </select>
                 </div>
@@ -167,7 +167,7 @@ if (isset($_GET['filterLocation'])) {
                 <div class="col-6">
                   <select class="form-select" name="upazila" id="upazila">
                     <option value="" selected>
-                      Select Your Upazila
+                      Select Your Upazila &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </option>
                   </select>
 
