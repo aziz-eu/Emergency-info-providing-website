@@ -130,10 +130,7 @@ if (isset($_GET['filterLocation'])) {
             </div>
             <h3>Find Hospital and Doctor</h3>
             <p class="mt-4 mb-1">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo
-              sequi minima mollitia sapiente earum nulla cum adipisci ab quo.
-              Dolore molestiae id fuga temporibus maiores mollitia quae sequi
-              libero est?
+            We can find your required hospital information, such as location, type, contact number, email address, etc. You can also learn about the hospital's doctors and filter them by the department.
             </p>
           </div>
         </div>
@@ -175,7 +172,7 @@ if (isset($_GET['filterLocation'])) {
                 </div>
                 <div class="col-6">
                   <div class="">
-                    <button type="submit" value="filter" name="filterLocation" class="btn  btn-dark">Filter</button>
+                    <button type="submit" value="filter" name="filterLocation" class="btn  btn-dark filter-btn">Filter</button>
                   </div>
                 </div>
               </div>
@@ -196,7 +193,7 @@ if (isset($_GET['filterLocation'])) {
                 <th scope="col">Location</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Email</th>
-                <th scope="col">Doctor List</th>
+                <th scope="col">Doctors</th>
               </tr>
             </thead>
             <tbody>

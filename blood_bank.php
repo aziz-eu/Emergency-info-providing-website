@@ -44,9 +44,7 @@
               </div>
 
               <p class="test position-fixed col-5 my-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Explicabo magni pariatur praesentium alias eos quasi officiis
-                reiciendis natus, consectetur unde?
+              Select Division ,City and Upazila to find the nearest blood bank. You can find out the available blood deteails in their stock. You can also send a blood application for your patient through our system. 
               </p>
             </div>
             <div class="col-lg-6 mb-5 form-content py-5">

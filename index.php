@@ -32,10 +32,7 @@
           <div class="col-lg-7 mt-5 welcome-message">
             <h2>Welcome to Emergency Info & Help</h2>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque
-              sunt architecto dolore! Rem id neque ea rerum ratione. Omnis,
-              accusantium atque minima accusamus veritatis sunt autem quisquam
-              a, maiores voluptate eum! Voluptas!
+            We are providing information that may be useful to you in your emergency. You can collect ambulance, hospital, doctors, blood bank, police, and fire service information from our system. You can send a request for blood to blood donors to donate blood. You can also help people by donating blood, so please register as a blood donor.
             </p>
           </div>
           <div class="col-lg-5 welcome-img d-none d-lg-block">
@@ -48,8 +45,8 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-12 text-center my-lg-5">
-            <h4>Find Help</h4>
+          <div class="col-12 text-center">
+            <h4>Find Information & Help</h4>
             <p>We try to Connect People</p>
           </div>
         </div>
@@ -63,10 +60,9 @@
                   alt="blood_donor"
                 />
 
-                <h3 class="py-3">Search Blood Donors</h3>
-                <p class="pt-2 pb-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam fugiat delectus autem.
+                <h3 class="py-3">Blood Donation Request</h3>
+                <p class="pt-2 pb-4 text-start px-2">
+                Are you searching for a blood donor? Send a blood donation request to blood donors. We will forward your request to all the right blood donors in your district.
                 </p>
               </div>
             </a>
@@ -81,14 +77,13 @@
                 />
 
                 <h3 class="py-3">Find Blood Bank</h3>
-                <p class="pt-2 pb-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam fugiat delectus autem.
+                <p class="pt-2 pb-4 text-start px-2">
+                Find the nearest blood bank information here. You can see a live update of their stock of blood. You can send a blood application to the blood bank for your patient.
                 </p>
               </div>
             </a>
           </div>
-          <div class="col-lg-4 d-block d-lg-flex">
+          <div class="col-lg-4 d-block d-lg-flex ">
             <a href="./ambulance.php" class="d-block d-lg-flex">
               <div class="box box1 text-center pt-4">
                 <img
@@ -98,9 +93,8 @@
                 />
 
                 <h3 class="py-3">Find Ambulance</h3>
-                <p class="pt-2 pb-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam fugiat delectus autem.
+                <p class="pt-2 pb-4 text-start px-2">
+                Find the nearest ambulance service provider information & ambulance details here. You can send a booking request to the ambulance provider to book an ambulance.
                 </p>
               </div>
             </a>
@@ -117,9 +111,8 @@
                 />
 
                 <h3 class="py-3">Search Hospital & Doctor</h3>
-                <p class="pt-2 pb-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam fugiat delectus autem.
+                <p class="pt-2 pb-4 text-start px-2">
+                Find hospital and doctor information. You can get doctor details and chambering time from our system, and you can search for specific department doctors .
                 </p>
               </div>
             </a>
@@ -134,9 +127,8 @@
                 />
 
                 <h3 class="py-3">Fire Service Help</h3>
-                <p class="pt-2 pb-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam fugiat delectus autem.
+                <p class="pt-2 pb-4 text-start px-2">
+                Find the nearest fire service station information here. In an emergency, you can search for fire stations by your Upazila name and contact them quickly. 
                 </p>
               </div>
             </a>
@@ -151,9 +143,8 @@
                 />
 
                 <h3 class="py-3">Police Help</h3>
-                <p class="pt-2 pb-4">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam fugiat delectus autem.
+                <p class="pt-2 pb-4 text-start px-2">
+                Find the nearest police station information here. You can search police stations by Upazila and you may contact them quickly.
                 </p>
               </div>
             </a>

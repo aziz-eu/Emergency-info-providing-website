@@ -270,3 +270,15 @@ a:hover {
   padding: 5px;
   display: inline;
 }
+
+
+.padding-blood-search{
+  padding-left: 30%;
+}
+
+
+.filter-btn{
+  padding-left: 40%;
+  padding-right: 40%;
+  font-weight: bolder;
+}

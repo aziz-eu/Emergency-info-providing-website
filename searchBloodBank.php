@@ -90,7 +90,7 @@ if (isset($_POST['applicationForm'])) {
                   B+: <?php echo $row['aviable_b_positive'] ?>
                   &emsp;&emsp;
                   B+: <?php echo $row['aviable_b_negative'] ?>
-                  <div class="text-end">
+                  <div class="padding-blood-search">
                     O+: <?php echo $row['aviable_o_positive'] ?>
                     &emsp;&emsp;
                     O-: <?php echo $row['aviable_o_negative'] ?>

@@ -153,7 +153,7 @@ if (isset($_POST['editFireSerInfo'])) {
 
 
                                                     <label for="division" class="form-lable">Devision</label>
-                                                    <select class="form-select" name="division" id="division">
+                                                    <select class="form-select division" name="division" >
                                                         <option value="<?php echo $row['division'] ?>" selected>
                                                             <?php echo $row['division'] ?>
                                                         </option>

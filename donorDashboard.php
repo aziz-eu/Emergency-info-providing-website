@@ -163,12 +163,7 @@
           ></a>
 
           <!-- Github -->
-          <a
-            class="btn btn-outline-light btn-floating m-1"
-            href="#!"
-            role="button"
-            ><i class="fab fa-github"></i
-          ></a>
+         
         </section>
         <!-- Section: Social media -->
       </div>

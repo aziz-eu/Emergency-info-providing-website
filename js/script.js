@@ -115,3 +115,17 @@ var bangladesh = {
       }
     }
   }
+
+
+
+//   var divClass = document.getElementsByClassName('division');
+
+// 	for(var i = 0; i < divClass.length; i++){
+		
+// 		let cnt = 0;
+
+// 		for (var x in bangladesh ) {
+// 			divClass[i].options[cnt] = new Option(x, x);
+// 			cnt++;
+// 		}
+// 	}
