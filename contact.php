@@ -43,59 +43,7 @@ if(isset($_POST['contactForm'])){
 </head>
 
 <body>
-    <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg  bg-white">
-            <div class="container">
-                <a class="navbar-brand" href="index.php">Emergency Info <span>&</span> Help</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.php">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Blood
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li>
-                                    <a class="dropdown-item" href="request_blood.php">Blood Request</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="donor_registration.php">Donor Registration</a>
-                                </li>
-                                <li><a class="dropdown-item" href="blood_bank.php">Blood Bank</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="ambulance.php">Ambulance</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="hospital.php">Hospital</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="police.php">Police</a>
-                          </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="fire.php">Fire Service</a>
-                          </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.php">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="contact.php">Contact</a>
-                        </li>
-                    </ul>
-                    <a href="login.php" class="btn btn-brand ms-lg-3">Login</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<?php include_once 'partials/navbar.php' ?>
 
     <main>
         <div id="blood-request">
@@ -112,7 +60,7 @@ if(isset($_POST['contactForm'])){
                            
                         </div>
                         
-                        <p class="test position-fixed col-5 my-3" >Whether you have a question, Suggestion, complain or just want to say hello, we’re happy to hear from you.</p>
+                        <p class="test position-fixed col-5 my-3" >Whether you have a question, suggestion, complain or just want to say hello, we’re happy to hear from you.</p>
                        
                     </div>
                     <div class="col-lg-6 mb-5 form-content py-5">
@@ -120,10 +68,10 @@ if(isset($_POST['contactForm'])){
                         <form method="POST" action="./contact.php">
                             <label for="name" class="form-lable">Your Name:</label>
                             <input type="text" class="form-control" name="name" id="name" required
-                                placeholder="e.g. Jack">
+                                placeholder="e.g. Mrs. Maria">
                             <label for="email" class="form-lable">E-mail:</label>
                             <input type="email" class="form-control" name="email" id="email" required
-                                placeholder="e.g. captain@emaxple.com">
+                                placeholder="e.g. maria@emaxple.com">
                             <label for="phone" class="form-lable">Phone:</label>
                             <input type="tel" class="form-control" name="phone" id="phone" required
                                 placeholder="e.g 01555566677">
@@ -145,45 +93,7 @@ if(isset($_POST['contactForm'])){
             </div>
         </div>
     </main>
-    <footer class="bg-dark text-center text-white">
-        <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-facebook-f"></i></a>
-
-                <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-twitter"></i></a>
-
-                <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-google"></i></a>
-
-                <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-instagram"></i></a>
-
-                <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-linkedin-in"></i></a>
-
-                <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
-                        class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3 footer-last">
-            © 2022 Copyright
-            <a class="text-white" href="/"></a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+    <?php include_once 'partials/footer.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

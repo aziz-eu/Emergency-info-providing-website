@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,58 +15,7 @@
 </head>
 
 <body>
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg  bg-white">
-      <div class="container">
-        <a class="navbar-brand" href="index.php">Emergency Info <span>&</span> Help</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Blood
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                  <a class="dropdown-item" href="request_blood.php">Blood Request</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="donor_registration.php">Donor Registration</a>
-                </li>
-                <li><a class="dropdown-item" href="blood_bank.php">Blood Bank</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="ambulance.php">Ambulance</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="hospital.php">Hospital</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="police.php">Police</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="fire.php">Fire Service</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.php">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
-            </li>
-          </ul>
-          <a href="login.php" class="btn btn-brand ms-lg-3">Login</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+ <?php include_once("./partials/navbar.php") ?>
 
   <main>
     <div id="blood-request">
@@ -83,7 +31,7 @@
                
             </div>
             
-            <p class="test position-fixed col-5 my-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni pariatur praesentium alias eos quasi officiis reiciendis natus, consectetur unde?</p>
+            <p class="test position-fixed col-5 my-3" >Select Division ,City and Upazila to find the nearest police stations. You can find your local police station's phone number, email, location, etc. If you find any wrong information, let us know. We will work on it. Stay safe and help others. </p>
            
         </div>
           <div class="col-lg-6 mb-5 form-content py-5">
@@ -120,35 +68,7 @@
       </div>
     </div>
   </main>
-  <footer class="bg-dark text-center text-white">
-    <div class="container p-4 pb-0">
-    
-      <section class="mb-4">
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-
-  
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-
-        <!-- Linkedin -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-
-        <!-- Github -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3 footer-last">
-      © 2022 Copyright
-      <a class="text-white" href="/"></a>
-    </div>
-    <!-- Copyright -->
-  </footer>
+  <?php include_once("./partials/footer.php") ?>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
     integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

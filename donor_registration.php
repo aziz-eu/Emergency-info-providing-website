@@ -71,7 +71,7 @@ if(isset($_POST['regForm'])){
                
             </div>
             
-            <p class="test position-fixed col-5 my-3" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni pariatur praesentium alias eos quasi officiis reiciendis natus, consectetur unde?</p>
+            <p class="test position-fixed col-5 my-3" >Be Grateful And Donate Blood. If You Are A Blood Donor, That Is Great. But If You Are A Blood Donor Who Also Encourages Other People To Donate Blood, You Are The Best!</p>
            
         </div>
           <div class="col-lg-6 mb-5 form-content py-5">

@@ -112,7 +112,7 @@
               <td><?php echo $row['contact_person'] ?></td>
               <td><?php echo $row['contact_number'] ?></td>
             </tr>
-
+            
             <?php endwhile; ?>
           </tbody>
         </table>
@@ -162,8 +162,6 @@
             ><i class="fab fa-linkedin-in"></i
           ></a>
 
-          <!-- Github -->
-         
         </section>
         <!-- Section: Social media -->
       </div>

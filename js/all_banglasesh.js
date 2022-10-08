@@ -96,7 +96,7 @@ var bangladesh = {
       selectDivision.options[selectDivision.options.length] = new Option(x, x);
     }
     selectDivision.onchange = function() {
-      //empty Chapters- and Topics- dropdowns
+      // city Drop Down
       selectUpazila.length = 1;
       selectDist.length = 1;
       //display correct values
@@ -105,7 +105,7 @@ var bangladesh = {
       }
     }
     selectDist.onchange = function() {
-      //empty Chapters dropdown
+      //upazila Drow Down
       selectUpazila.length = 1;
       //display correct values
       var z = bangladesh[selectDivision.value][this.value];

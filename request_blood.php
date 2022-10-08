@@ -79,10 +79,7 @@ if(isset($_POST['reqForm'])){
               </div>
 
               <p class="test position-fixed col-5 my-3">
-                Lorem, ipsum. Lorem ipsum dolor, sit amet consectetur
-                adipisicing elit. Dolores error hic blanditiis, molestias
-                assumenda adipisci quae sed accusantium inventore velit? quasi
-                officiis reiciendis natus, consectetur unde?
+                Fill the form carefully to send a blood donation request to blood donors. We will send notifications to all blood donors in your city. We hope you will find blood donors quickly. 
               </p>
             </div>
             <div class="col-lg-6 mb-5 form-content py-5">
