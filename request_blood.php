@@ -21,7 +21,7 @@ if(isset($_POST['reqForm'])){
     $contact_number =  trim($_POST['contact_number']);
     $patient_history =  trim($_POST['patient_history']);
 
-    $sql = "INSERT INTO blood_request(patient_name, blood_group, required_unit, gender, age, date_of_donation, hospital_name, hospital_address, division, city, upazila, contact_person, contact_number, patient_history) VALUES('$patient_name', '$blood_group', '$required_unit', '$gender', '$age', '$date_of_donation', '$hospital_name', '$hospital_address',  '$division', '$city', '$upazila', '$contact_person', '$contact_number', '$patient_history' )";
+    $sql = "INSERT INTO blood_donation_request(patient_name, blood_group, required_unit, gender, age, date_of_donation, hospital_name, hospital_address, division, city, upazila, contact_person, contact_number, patient_history) VALUES('$patient_name', '$blood_group', '$required_unit', '$gender', '$age', '$date_of_donation', '$hospital_name', '$hospital_address',  '$division', '$city', '$upazila', '$contact_person', '$contact_number', '$patient_history' )";
 
     if($con->query($sql) == true  ){
       redirect('request_blood.php', 'Your Request is Successfully Submited');
@@ -191,7 +191,7 @@ if(isset($_POST['reqForm'])){
                 </select>
                 <div class="row">
                   <div class="col-6">
-                    <label for="city" class="form-lable">City</label>
+                    <label for="city" class="form-lable">District</label>
                     <select class="form-select" name="city" id="city">
                       <option value="select-message" selected>
                         Plese Select Your City
@@ -216,7 +216,7 @@ if(isset($_POST['reqForm'])){
                   name="contact_person"
                   id="contact-person-name"
                   required
-                  placeholder="e.g.Elizabeth Swann"
+                  placeholder="e.g.Elizabeth"
                 />
                 <label for="phone" class="form-lable"
                   >Contact Person Phone:</label

@@ -65,8 +65,6 @@ if (isset($_POST['editFireSerInfo'])) {
 
 <body>
 
-
-
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg  bg-white">
             <div class="container">
@@ -80,14 +78,19 @@ if (isset($_POST['editFireSerInfo'])) {
                             <a class="nav-link" aria-current="page" href="./admin_dashboard.php">Dashboard</a>
                         </li>
 
-
+                        <li class="nav-list">
+                            <a href="messages.php" class="nav-link">Messages</a>
+                        </li>
                     </ul>
-                    <a href="messages.php" class="btn btn-brand ms-lg-3">Messages</a>
+                    <a href="./logout.php" class="btn btn-brand ms-lg-3">Log Out</a>
+
 
                 </div>
             </div>
         </nav>
     </header>
+
+
 
     <main>
         <div class="container">
@@ -153,7 +156,7 @@ if (isset($_POST['editFireSerInfo'])) {
 
 
                                                     <label for="division" class="form-lable">Devision</label>
-                                                    <select class="form-select division" name="division" >
+                                                    <select class="form-select division" name="division">
                                                         <option value="<?php echo $row['division'] ?>" selected>
                                                             <?php echo $row['division'] ?>
                                                         </option>
@@ -208,39 +211,7 @@ if (isset($_POST['editFireSerInfo'])) {
 
     </main>
 
-    <footer class="bg-dark text-center text-white">
-        <div class="container p-4 pb-0">
-            <!-- Section: Social media -->
-            <section class="mb-4">
-                <!-- Facebook -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-
-                <!-- Twitter -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-
-                <!-- Google -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-
-                <!-- Instagram -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-
-                <!-- Linkedin -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-
-                <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-            </section>
-            <!-- Section: Social media -->
-        </div>
-        <!-- Grid container -->
-
-        <!-- Copyright -->
-        <div class="text-center p-3 footer-last">
-            © 2022 Copyright
-            <a class="text-white" href="/"></a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+    <?php include_once '../partials/footer.php' ?>
 
 
 

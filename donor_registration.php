@@ -21,7 +21,7 @@ if(isset($_POST['regForm'])){
     $username = trim( $_POST['user_name']);
     $password =  md5(trim($_POST['password']));
 
-    $sql = "INSERT INTO donors_registration(frist_name, last_name, blood_group, gender, age, weight, email, phone, address, division, city, upazila, user_name, password) VALUES('$fristname', '$lastname', '$blood_group', '$gender', '$age', '$weight', '$email', '$phone', '$address', '$division', '$city', '$upazila', '$username', '$password' )";
+    $sql = "INSERT INTO blood_donors(frist_name, last_name, blood_group, gender, age, weight, email, phone, address, division, city, upazila, user_name, password) VALUES('$fristname', '$lastname', '$blood_group', '$gender', '$age', '$weight', '$email', '$phone', '$address', '$division', '$city', '$upazila', '$username', '$password' )";
 
     if($con->query($sql) == true  ){
       redirect('login.php', 'Registraion successfully');
@@ -80,12 +80,12 @@ if(isset($_POST['regForm'])){
               <div class="col-6">
               <label for="fristname" class="form-lable">Frist Name</label>
               <input type="text" class="form-control" name="fristname" id="fristName" required
-                placeholder="e.g. Jack" />
+                placeholder="e.g. Maria" />
                 </div>
                 <div class="col-6">
               <label for="lastname" class="form-lable">Last Name</label>
               <input type="text" class="form-control" name="lastname" id="lastName" required
-                placeholder="e.g. Sparow" />
+                placeholder="e.g. Akter" />
                 </div>
                 </div>
                 <div class="row">
@@ -124,12 +124,12 @@ if(isset($_POST['regForm'])){
  
               <label for="email" class="form-lable">E-mail</label>
               <input type="email" class="form-control" name="email" id="email" required
-                placeholder="e.g. captain@emaxple.com" />
+                placeholder="e.g. maria@emaxple.com" />
               <label for="phone" class="form-lable">Phone</label>
               <input type="tel" class="form-control" name="phone" id="phone" required placeholder="e.g 01555566677" />
               <label for="address" class="form-lable">Address</label>
               <input type="text" class="form-control" name="address" id="address" required
-                placeholder="e.g. post office: New P.O" />
+                placeholder="e.g. post office: Dhanmondi" />
               <label for="division" class="form-lable">Devision</label>
               <select class="form-select" name="division" id="division">
                 <option value="select-message" selected>
@@ -138,7 +138,7 @@ if(isset($_POST['regForm'])){
               </select>
               <div class="row">
                 <div class="col-6">
-                  <label for="city" class="form-lable">City</label>
+                  <label for="city" class="form-lable">District</label>
                   <select class="form-select" name="city" id="city">
                     <option value="select-message" selected>
                       Plese Select Your City
@@ -157,7 +157,7 @@ if(isset($_POST['regForm'])){
 
               <label for="user-name" class="form-lable">Set Your UserName:</label>
               <input type="text" class="form-control" name="user_name" id="user-Name" required
-                placeholder="e.g. jack2022" />
+                placeholder="e.g. maria123" />
               <label for="password" class="form-lable">Set Your Password</label>
               <input type="password" class="form-control" name="password" id="password" placeholder="Your password"
                 required />

@@ -42,9 +42,9 @@ if(isset($_FILES['image'])){
     $path = "uploads/bdonners/profile-picture/".$newfilename.".".$file_ext;
      move_uploaded_file($file_tmp,$path);
     
-     $sql = "UPDATE  `donors_registration` SET image = '$path' WHERE id = '$id' ";
+     $sql = "UPDATE  `blood_donors` SET image = '$path' WHERE id = '$id' ";
      if($con->query($sql)){
-      $sql = "SELECT * FROM `donors_registration` WHERE id = '$id' LIMIT 1";
+      $sql = "SELECT * FROM `blood_donors` WHERE id = '$id' LIMIT 1";
       $result = $con->query($sql);
       $_SESSION['user']  = $result->fetch_assoc();
      }
@@ -73,10 +73,10 @@ if(isset($_POST['edit_profile'])){
   $upazila =  trim($_POST['upazila']);
   $last_donation =  trim($_POST['last_donation']);
 
-  $sql = "UPDATE `donors_registration` SET `frist_name`='$fristname',`last_name`='$lastname',`blood_group`='$blood_group',`gender`='$gender',`age`='$age',`weight`='$weight',`email`='$email',`phone`='$phone',`address`='$address',`division`='$division',`city`='$city',`upazila`='$upazila',`last_donation`='$last_donation'  WHERE `id` ='$id' ";
+  $sql = "UPDATE `blood_donors` SET `frist_name`='$fristname',`last_name`='$lastname',`blood_group`='$blood_group',`gender`='$gender',`age`='$age',`weight`='$weight',`email`='$email',`phone`='$phone',`address`='$address',`division`='$division',`city`='$city',`upazila`='$upazila',`last_donation`='$last_donation'  WHERE `id` ='$id' ";
 
   if($con->query($sql) == true  ){
-    $sql = "SELECT * FROM `donors_registration` WHERE id = '$id' LIMIT 1";
+    $sql = "SELECT * FROM `blood_donors` WHERE id = '$id' LIMIT 1";
     $result = $con->query($sql);
     $_SESSION['user']  = $result->fetch_assoc();
     // redirect('login.php', 'Information Successfullay Updated. Please login Again to see Save Change');
@@ -244,7 +244,7 @@ if(isset($_POST['edit_profile'])){
               </select>
               <div class="row">
                 <div class="col-6">
-                  <label for="city" class="form-lable">City</label>
+                  <label for="city" class="form-lable">District</label>
                   <select class="form-select" name="city" id="city">
                     <option value="<?php echo getUserSession('city')  ?>" selected>
                     <?php echo getUserSession('city')  ?>

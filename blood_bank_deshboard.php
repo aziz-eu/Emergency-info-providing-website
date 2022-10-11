@@ -6,14 +6,14 @@ guard('login.php', 'You must login first');
 
 $id = $_SESSION['user']['id'];
 
-$sql = "SELECT * FROM `blood_bank_application` WHERE bank_id = '$id'";
+$sql = "SELECT * FROM `blood_application` WHERE bank_id = '$id'";
 
 $results = $con->query($sql);
 
 if (isset($_GET['delete'])) {
   $id = $_GET['delete'];
 
-  $sql = "DELETE FROM `blood_bank_application` WHERE `id` = '$id'";
+  $sql = "DELETE FROM `blood_application` WHERE `id` = '$id'";
   // $result = mysqli_query($conn, $sql);
   if ($con->query($sql) == true) {
       //   $sql = "SELECT * FROM `blood_bank` WHERE id = '$id' LIMIT 1";

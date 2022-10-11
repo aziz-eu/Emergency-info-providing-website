@@ -77,7 +77,7 @@
 
               <li class="nav-item">
                 <a class="nav-link active" href="hospital_dashboard.php"
-                  >Deshboard</a
+                  >Dashboard</a
                 >
               </li>
             </ul>

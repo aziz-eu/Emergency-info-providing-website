@@ -6,7 +6,7 @@ guard('login.php', 'You must login first');
 
 $id = $_SESSION['user']['id'];
 
-$sql = "SELECT * FROM `ambulance_request` WHERE ambulance_id  = '$id'";
+$sql = "SELECT * FROM `ambulance_booking` WHERE ambulance_id  = '$id'";
 
 $results = $con->query($sql);
 

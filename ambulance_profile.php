@@ -21,10 +21,10 @@ if (isset($_POST['edit_ambulance_profile'])) {
   $upazila =  trim($_POST['upazila']);
   $status =  trim($_POST['status']);
 
-  $sql = "UPDATE `ambulance_registration` SET `org_name`='$org_name',`email`='$email',`phone`='$phone',`address`='$address',`division`='$division',`city`='$city',`upazila`='$upazila',`status`='$status' WHERE `id` ='$id' ";
+  $sql = "UPDATE `ambulance` SET `org_name`='$org_name',`email`='$email',`phone`='$phone',`address`='$address',`division`='$division',`city`='$city',`upazila`='$upazila',`status`='$status' WHERE `id` ='$id' ";
 
   if ($con->query($sql) == true) {
-    $sql = "SELECT * FROM `ambulance_registration` WHERE id = '$id' LIMIT 1";
+    $sql = "SELECT * FROM `ambulance` WHERE id = '$id' LIMIT 1";
     $result = $con->query($sql);
     $_SESSION['user']  = $result->fetch_assoc();
     // redirect('login.php', 'Information Successfullay Updated. Please login Again to see Save Change');
@@ -46,10 +46,10 @@ if (isset($_POST['update_ambulance_count'])) {
   $frezing_ambulance =  trim($_POST['frezing_ambulance']);
 
 
-  $sql = "UPDATE `ambulance_registration` SET `ac`='$ac_ambulance',`non_ac`='$non_ac_ambulance',`air`='$air_ambulance',`icu`='$icu_ambulance',`hdu`='$hdu_ambulance',`frezing`='$frezing_ambulance' WHERE `id` = '$id' ";
+  $sql = "UPDATE `ambulance` SET `ac`='$ac_ambulance',`non_ac`='$non_ac_ambulance',`air`='$air_ambulance',`icu`='$icu_ambulance',`hdu`='$hdu_ambulance',`frezing`='$frezing_ambulance' WHERE `id` = '$id' ";
 
   if ($con->query($sql) == true) {
-    $sql = "SELECT * FROM `ambulance_registration` WHERE id = '$id' LIMIT 1";
+    $sql = "SELECT * FROM `ambulance` WHERE id = '$id' LIMIT 1";
     $result = $con->query($sql);
     $_SESSION['user']  = $result->fetch_assoc();
     // redirect('login.php', 'Information Successfullay Updated. Please login Again to see Save Change');
@@ -91,9 +91,9 @@ if (isset($_FILES['image'])) {
     $path = "uploads/ambulance/logo/" . $newfilename . "." . $file_ext;
     move_uploaded_file($file_tmp, $path);
 
-    $sql = "UPDATE  `ambulance_registration` SET image = '$path' WHERE id = '$id' ";
+    $sql = "UPDATE  `ambulance` SET image = '$path' WHERE id = '$id' ";
     if ($con->query($sql)) {
-      $sql = "SELECT * FROM `ambulance_registration` WHERE id = '$id' LIMIT 1";
+      $sql = "SELECT * FROM `ambulance` WHERE id = '$id' LIMIT 1";
       $result = $con->query($sql);
       $_SESSION['user']  = $result->fetch_assoc();
     }
@@ -153,7 +153,7 @@ if (isset($_FILES['image'])) {
         $path = isset($_SESSION['user']['image']) ?  $_SESSION['user']['image'] : 'uploads/profile.png';
 
         ?>
-        <img class="user-pic img-fluid" src="<?php echo $path ?>" alt="user_pic">
+        <img class="user-pic img-fluid" src="<?php echo $path ?>" alt="logo">
 
 
       </div>
@@ -324,39 +324,7 @@ if (isset($_FILES['image'])) {
 
 
   </main>
-  <footer class="bg-dark text-center text-white">
-    <div class="container p-4 pb-0">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-
-        <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-
-        <!-- Google -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-
-        <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-
-        <!-- Linkedin -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-
-        <!-- Github -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-      </section>
-      <!-- Section: Social media -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3 footer-last">
-      © 2022 Copyright
-      <a class="text-white" href="/"></a>
-    </div>
-    <!-- Copyright -->
-  </footer>
+<?php include_once("./partials/footer.php") ?>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

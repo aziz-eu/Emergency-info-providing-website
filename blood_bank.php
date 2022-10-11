@@ -44,7 +44,7 @@
               </div>
 
               <p class="test position-fixed col-5 my-3">
-              Select Division ,City and Upazila to find the nearest blood bank. You can find out the available blood deteails in their stock. You can also send a blood application for your patient through our system. 
+              Select Division , District and Upazila to find the nearest blood bank. You can find out the available blood deteails in their stock. You can also send a blood application for your patient through our system. 
               </p>
             </div>
             <div class="col-lg-6 mb-5 form-content py-5">
@@ -58,10 +58,10 @@
                   </option>
                 </select>
 
-                <label for="city" class="form-lable">City</label>
+                <label for="city" class="form-lable">District</label>
                 <select class="form-select" name="city" id="city">
                   <option value="select-message" selected>
-                    Plese Select Your City
+                    Plese Select Your District
                 </select>
 
                 <label for="upazila" class="form-lable">Upazila</label>

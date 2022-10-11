@@ -234,7 +234,7 @@ if (isset($_POST['update_blood_count'])) {
               </select>
               <div class="row">
                 <div class="col-6">
-                  <label for="city" class="form-lable">City</label>
+                  <label for="city" class="form-lable">District</label>
                   <select class="form-select" name="city" id="city">
                     <option value="<?php echo getUserSession('city')  ?>" selected>
                       <?php echo getUserSession('city')  ?>
@@ -311,10 +311,10 @@ if (isset($_POST['update_blood_count'])) {
 
               <div class="col-6">
           
-              <label for="aviable_ab_positive " class="form-lable">O+</label>
+              <label for="aviable_ab_positive " class="form-lable">AB+</label>
               <input type="text" class="form-control" value="<?php echo getUserSession('aviable_ab_positive') ?>" name="aviable_ab_positive" id="aviable_ab_positive" /></div>
               <div class="col-6">
-              <label for="aviable_ab_negative" class="form-lable">O-</label>
+              <label for="aviable_ab_negative" class="form-lable">AB-</label>
               <input type="text" class="form-control" value="<?php echo getUserSession('aviable_ab_negative') ?>" name="aviable_ab_negative" id="aviable_o_negative" /></div>
 
               </div>

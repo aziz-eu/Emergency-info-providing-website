@@ -72,9 +72,7 @@ if(isset($_POST['bloodRegForm'])){
               </div>
 
               <p class="test position-fixed col-5 my-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Explicabo magni pariatur praesentium alias eos quasi officiis
-                reiciendis natus, consectetur unde?
+              Fill the form carefully to add your blood bank to our system. You can login and manage your blood stock. People can find out about your blood bank and blood stock details. After submitting the form, we will verify your provided information.
               </p>
             </div>
             <div class="col-lg-6 mb-5 form-content py-5">

@@ -66,58 +66,7 @@ if (isset($_GET['filterLocation'])) {
 </head>
 
 <body>
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg bg-white">
-      <div class="container">
-        <a class="navbar-brand" href="index.php">Emergency Info <span>&</span> Help</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Blood
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li>
-                  <a class="dropdown-item" href="request_blood.php">Blood Request</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="donor_registration.php">Donor Registration</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="blood_bank.php">Blood Bank</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="ambulance.php">Ambulance</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="hospital.php">Hospital</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="police.php">Police</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="fire.php">Fire Service</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.php">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.php">Contact</a>
-            </li>
-          </ul>
-          <a href="login.php" class="btn btn-brand ms-lg-3">Login</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+  <?php include_once("./partials/navbar.php") ?>
 
   <main>
     <div class="container">
@@ -130,11 +79,11 @@ if (isset($_GET['filterLocation'])) {
             </div>
             <h3>Find Hospital and Doctor</h3>
             <p class="mt-4 mb-1">
-            We can find your required hospital information, such as location, type, contact number, email address, etc. You can also learn about the hospital's doctors and filter them by the department.
+            You can find your required hospital information, such as location, type, contact number, email address, etc. You can also learn about the hospital's doctors and filter them by the department.
             </p>
           </div>
         </div>
-        <div class="col-6 search-btn mt-5">
+        <div class="col-lg-6 search-btn mt-5 p-sm-5">
 
           <div>
             <form method="get" action="hospital_all.php">
@@ -154,7 +103,7 @@ if (isset($_GET['filterLocation'])) {
                 <div class="col-6">
                   <select class="form-select" name="city" id="city">
                     <option value="" selected>
-                      Select Your City &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      Select Your District &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </option>
                   </select>
                 </div>
@@ -221,36 +170,7 @@ if (isset($_GET['filterLocation'])) {
     </div>
   </main>
 
-  <footer class="bg-dark text-center text-white">
-    <div class="container p-4 pb-0">
-      <!-- Section: Social media -->
-      <section class="mb-4">
-        <!-- Facebook -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
-
-        <!-- Twitter -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
-
-        <!-- Google -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
-
-        <!-- Instagram -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
-
-        <!-- Linkedin -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
-
-        <!-- Github -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-      </section>
-    </div>
-
-    <div class="text-center p-3 footer-last">
-      © 2022 Copyright
-      <a class="text-white" href="/"></a>
-    </div>
-
-  </footer>
+<?php include_once("./partials/footer.php") ?>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
@@ -263,8 +183,11 @@ if (isset($_GET['filterLocation'])) {
           "lengthChange": false,
 
           "language": {
-            "emptyTable": "No Result Found"
-          }
+            "emptyTable": "No Result Found",
+            
+          },
+          "ordering": false
+
 
         }
 

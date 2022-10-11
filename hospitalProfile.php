@@ -122,7 +122,7 @@ if (isset($_POST['edit_profile'])) {
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" href="hospital_dashboard.php">Deshboard</a>
+              <a class="nav-link active" href="hospital_dashboard.php">Dashboard</a>
             </li>
           </ul>
           <a href="logout.php" class="btn btn-brand ms-lg-3">Log Out</a>
@@ -139,7 +139,7 @@ if (isset($_POST['edit_profile'])) {
         $path = isset($_SESSION['user']['image']) ?  $_SESSION['user']['image'] : 'uploads/profile.png';
 
         ?>
-        <img class="user-pic img-fluid" src="<?php echo $path ?>" alt="user_pic">
+        <img class="user-pic img-fluid" src="<?php echo $path ?>" alt="logo">
 
 
       </div>
@@ -205,7 +205,7 @@ if (isset($_POST['edit_profile'])) {
               </select>
               <div class="row">
                 <div class="col-6">
-                  <label for="city" class="form-lable">City</label>
+                  <label for="city" class="form-lable">District</label>
                   <select class="form-select" name="city" id="city">
                     <option value="<?php echo getUserSession('city')  ?>" selected>
                       <?php echo getUserSession('city')  ?>
@@ -257,8 +257,6 @@ if (isset($_POST['edit_profile'])) {
         <!-- Linkedin -->
         <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
 
-        <!-- Github -->
-        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
       </section>
       <!-- Section: Social media -->
     </div>

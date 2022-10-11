@@ -125,7 +125,7 @@ if (isset($_GET['delete'])) {
                             <a class="nav-link" href="./hospital_show_doctors.php">Doctor List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./hospital_dashboard.php">Deshboard</a>
+                            <a class="nav-link" href="./hospital_dashboard.php">Dashboard</a>
                         </li>
                     </ul>
                     <a href="logout.php" class="btn btn-brand ms-lg-3">Log Out</a>
@@ -157,10 +157,13 @@ if (isset($_GET['delete'])) {
                             </tr>
                         </thead>
                         <tbody>
-                        <?php while ($row = $results->fetch_assoc()) : ?>
+                        <?php $x =1 ;
+                         while ($row = $results->fetch_assoc()) : ?>
                         
                             <tr>
                                 <th scope="row">
+                                    <?php echo $x;
+                                    $x++; ?>
                                 </th>
                                 <th scope="row">
                                     <?php echo $row['doctor_name'] ?>

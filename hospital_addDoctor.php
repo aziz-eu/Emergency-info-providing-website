@@ -101,7 +101,7 @@ if (isset($_POST['add_doctor'])) {
                             <a class="nav-link" href="./hospital_show_doctors.php">Doctor List</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./hospital_dashboard.php">Deshboard</a>
+                            <a class="nav-link" href="./hospital_dashboard.php">Dashboard</a>
                         </li>
                     </ul>
                     <a href="logout.php" class="btn btn-brand ms-lg-3">Log Out</a>

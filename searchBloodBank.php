@@ -28,7 +28,7 @@ if (isset($_POST['applicationForm'])) {
   $bank_id =  trim($_POST['bank_id']);
 
 
-  $sql = "INSERT INTO `blood_bank_application` (`applicant_name`, `contact_number`, `blood_group`, `requird_unit`, `date_of_donation`, `hospital_name`, `hospital_address`, `bank_id`) VALUES('$applicant_name','$contact_number' ,'$blood_group', '$required_unit', '$date_of_donation', '$hospital_name', '$hospital_address',  '$bank_id' )";
+  $sql = "INSERT INTO `blood_application` (`applicant_name`, `contact_number`, `blood_group`, `requird_unit`, `date_of_donation`, `hospital_name`, `hospital_address`, `bank_id`) VALUES('$applicant_name','$contact_number' ,'$blood_group', '$required_unit', '$date_of_donation', '$hospital_name', '$hospital_address',  '$bank_id' )";
 
 
 

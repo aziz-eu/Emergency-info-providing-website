@@ -40,7 +40,7 @@ if (isset($_POST['addNewFireStation'])) {
 </head>
 
 <body>
-    <header class="sticky-top">
+<header class="sticky-top">
         <nav class="navbar navbar-expand-lg  bg-white">
             <div class="container">
                 <a class="navbar-brand" href="./admin_dashboard.php">Emergency Info <span>&</span> Help</a>
@@ -49,13 +49,16 @@ if (isset($_POST['addNewFireStation'])) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
+                    <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="./admin_dashboard.php">Dashboard</a>
                         </li>
-
-
+                        
+                    <li class="nav-list">
+                    <a href="messages.php" class="nav-link">Messages</a>
+                    </li>
                     </ul>
-                    <a href="messages.php" class="btn btn-brand ms-lg-3">Messages</a>
+                    <a href="./logout.php" class="btn btn-brand ms-lg-3">Log Out</a>
+                    
 
                 </div>
             </div>
@@ -77,9 +80,7 @@ if (isset($_POST['addNewFireStation'])) {
                         </div>
 
                         <p class="test position-fixed col-5 my-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Explicabo magni pariatur praesentium alias eos quasi officiis
-                            reiciendis natus, consectetur unde?
+                        Please carefully add fire service information. After filling the form, please recheck all the information again and keep all the information up-to-date. 
                         </p>
                     </div>
                     <div class="col-lg-6 mb-5 form-content py-5">

@@ -9,7 +9,7 @@ if (isset($_POST['ambulanceSearch'])) {
     $city = trim($_POST['city']);
     $upazila = trim($_POST['upazila']);
 
-    $sql = "SELECT * FROM `ambulance_registration` WHERE division = '$division' AND  city = '$city' AND upazila = '$upazila' ";
+    $sql = "SELECT * FROM `ambulance` WHERE division = '$division' AND  city = '$city' AND upazila = '$upazila' ";
     $results = $con->query($sql);
 
     if ($results->num_rows == 0)
@@ -32,7 +32,7 @@ else if (isset($_POST['send_message'])) {
     
 
 
-    $sql = "INSERT INTO `ambulance_request` (`ambulance_type`, `departing_date`, `source_address`, `destination_address`, `customer_name`, `contact_number`,`ambulance_id`) VALUES ('$ambulance_type', '$date_of_departing', '$source_address', '$destination_address', '$customer_name', '$contact_number', '$ambulance_id')";
+    $sql = "INSERT INTO `ambulance_booking` (`ambulance_type`, `departing_date`, `source_address`, `destination_address`, `customer_name`, `contact_number`,`ambulance_id`) VALUES ('$ambulance_type', '$date_of_departing', '$source_address', '$destination_address', '$customer_name', '$contact_number', '$ambulance_id')";
 
 
 
@@ -129,8 +129,9 @@ else if (isset($_POST['send_message'])) {
                                             <option value="AC" selected>AC Ambulance</option>
                                             <option value="Non AC">Non AC Ambulance</option>
                                             <option value="ICU ">ICU Ambulance</option>
-                                            <option value="CCU">CCU Ambulance</option>
+                                            <option value="CCU">HDU Ambulance</option>
                                             <option value="Frezing">Frezing Ambulance</option>
+                                            <option value="Air">Air Ambulance</option>
 
                                         </select>
 

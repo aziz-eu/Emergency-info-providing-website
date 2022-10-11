@@ -34,9 +34,13 @@ guard('index.php', 'You must login first');
                             <a class="nav-link" aria-current="page" href="./admin_dashboard.php">Dashboard</a>
                         </li>
                         
-
+                    <li class="nav-list">
+                    <a href="messages.php" class="nav-link">Messages</a>
+                    </li>
+                    
                     </ul>
-                    <a href="messages.php" class="btn btn-brand ms-lg-3">Messages</a>
+                    <a href="./logout.php" class="btn btn-brand ms-lg-3">Log Out</a>
+                    
 
                 </div>
             </div>
@@ -97,6 +101,7 @@ guard('index.php', 'You must login first');
                                         <a href="hospital_info.php">Hospital Info</a>
                                     </div>
                                 </div>
+                                
                             </div>
 
 

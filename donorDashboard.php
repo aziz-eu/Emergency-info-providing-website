@@ -8,7 +8,7 @@
   $upazila = $_SESSION['user']['upazila'];
   $blood_group = $_SESSION['user']['blood_group'];
 
-  $sql = "SELECT * FROM `blood_request` WHERE blood_group = '$blood_group' AND  city = '$city' AND upazila = '$upazila' ";
+  $sql = "SELECT * FROM `blood_donation_request` WHERE blood_group = '$blood_group' AND  city = '$city' AND upazila = '$upazila' ";
 
   $results = $con->query($sql);
 

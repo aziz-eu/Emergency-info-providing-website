@@ -3,14 +3,14 @@ include_once './admin_includes/admin_function.php';
 include_once './admin_includes/admin_session.php';
 include_once './admin_includes/db.php';
 guard('index.php', 'You must login first');
-$sql = "SELECT * FROM `ambulance_registration`";
+$sql = "SELECT * FROM `ambulance`";
 $results = $con->query($sql);
 
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
-    $sql = "DELETE FROM `ambulance_registration` WHERE `id` = '$id'";
+    $sql = "DELETE FROM `ambulance` WHERE `id` = '$id'";
     // $result = mysqli_query($conn, $sql);
     if ($con->query($sql) == true) {
         //   $sql = "SELECT * FROM `blood_bank` WHERE id = '$id' LIMIT 1";
@@ -20,7 +20,7 @@ if (isset($_GET['delete'])) {
     } else {
         echo "Error: " . $sql . "<br>" . $con->error;
     }
-  }
+}
 
 
 
@@ -59,9 +59,12 @@ if (isset($_GET['delete'])) {
                             <a class="nav-link" aria-current="page" href="./admin_dashboard.php">Dashboard</a>
                         </li>
 
-
+                        <li class="nav-list">
+                            <a href="messages.php" class="nav-link">Messages</a>
+                        </li>
                     </ul>
-                    <a href="messages.php" class="btn btn-brand ms-lg-3">Messages</a>
+                    <a href="./logout.php" class="btn btn-brand ms-lg-3">Log Out</a>
+
 
                 </div>
             </div>
@@ -91,11 +94,11 @@ if (isset($_GET['delete'])) {
 
                     <tbody>
                         <?php while ($row = $results->fetch_assoc()) :
-                            ?>
-                            
+                        ?>
+
                             <tr>
 
-                                <td><?php echo $row['id']?></td>
+                                <td><?php echo $row['id'] ?></td>
                                 <td><?php echo $row['org_name'] ?></td>
                                 <td><?php echo $row['phone'] ?></td>
                                 <td><?php echo $row['email'] ?></td>
@@ -148,7 +151,7 @@ if (isset($_GET['delete'])) {
                 <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
 
                 <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+
             </section>
             <!-- Section: Social media -->
         </div>
@@ -176,24 +179,24 @@ if (isset($_GET['delete'])) {
     </script>
 
 
-<script>
-    deletes = document.getElementsByClassName('delete');
-    Array.from(deletes).forEach((element) => {
-      element.addEventListener("click", (e) => {
-        console.log("edit ");
-        let delId = e.target.id;
-        console.log(delId)
+    <script>
+        deletes = document.getElementsByClassName('delete');
+        Array.from(deletes).forEach((element) => {
+            element.addEventListener("click", (e) => {
+                console.log("edit ");
+                let delId = e.target.id;
+                console.log(delId)
 
-        if (confirm("Are you sure you want to delete this note!")) {
-          console.log("yes");
-          window.location = `ambulance_provider.php?delete=${delId}`;
-         
-        } else {
-          console.log("no");
-        }
-      })
-    })
-  </script>
+                if (confirm("Are you sure you want to delete this note!")) {
+                    console.log("yes");
+                    window.location = `ambulance_provider.php?delete=${delId}`;
+
+                } else {
+                    console.log("no");
+                }
+            })
+        })
+    </script>
 
 
     <script src="../js/script.js"></script>

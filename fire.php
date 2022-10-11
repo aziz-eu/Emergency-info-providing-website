@@ -32,7 +32,7 @@
                
             </div>
             
-            <p class="test position-fixed col-5 my-3" >Select Division ,City and Upazila to find the nearest fire service stations. You can find your local police station's phone number, email, location, etc. If you find any wrong information, let us know. We will work on it. Stay safe and help others.</p>
+            <p class="test position-fixed col-5 my-3" >Select Division , District and Upazila to find the nearest fire service stations. You can find your local police station's phone number, email, location, etc. If you find any wrong information, let us know. We will work on it. Stay safe and help others.</p>
            
         </div>
           <div class="col-lg-6 mb-5 form-content py-5">
@@ -46,10 +46,10 @@
                 </option>
               </select>
                 
-                  <label for="city" class="form-lable">City</label>
+                  <label for="city" class="form-lable">District</label>
                   <select class="form-select" name="city" id="city">
                     <option value="select-message" selected>
-                      Plese Select Your City
+                      Plese Select Your District
                     </option>
                   </select>
                   <label for="upazila" class="form-lable">Upazila</label>

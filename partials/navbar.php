@@ -2,7 +2,7 @@
       <nav class="navbar navbar-expand-lg bg-white">
         <div class="container">
           <a class="navbar-brand" href="index.php"
-            >Emergency Info <span>&</span> Help</a
+            >Emergency Info<span>&</span> Help</a
           >
           <button
             class="navbar-toggler"
@@ -60,7 +60,7 @@
                 <a class="nav-link" href="ambulance.php">Ambulance</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="hospital.php">Hospital</a>
+                <a class="nav-link" href="hospital_all.php">Hospital</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="police.php">Police</a>

@@ -16,7 +16,7 @@ if(isset($_POST['ambulanceRegForm'])){
     $username = trim( $_POST['username']);
     $password =  md5(trim($_POST['password']));
 
-    $sql = "INSERT INTO `ambulance_registration` ( `org_name`, `email`, `phone`, `address`, `division`, `city`, `upazila`, `user_name`, `password`) VALUES ('$org_name', '$email', '$phone', '$address', '$division', '$city', '$upazila', '$username', '$password' );";
+    $sql = "INSERT INTO `ambulance` ( `org_name`, `email`, `phone`, `address`, `division`, `city`, `upazila`, `user_name`, `password`) VALUES ('$org_name', '$email', '$phone', '$address', '$division', '$city', '$upazila', '$username', '$password' );";
 
 
     if($con->query($sql) == true  ){
@@ -73,9 +73,7 @@ if(isset($_POST['ambulanceRegForm'])){
               </div>
 
               <p class="test position-fixed col-5 my-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Explicabo magni pariatur praesentium alias eos quasi officiis
-                reiciendis natus, consectetur unde?
+              Fill the form carefully to add your ambulance to our system. You can login and manage your ambulance information. People can find out about your blood bank and can send booking requests to you. After submitting the form, we will verify your provided information.
               </p>
             </div>
             <div class="col-lg-6 mb-5 form-content py-5">

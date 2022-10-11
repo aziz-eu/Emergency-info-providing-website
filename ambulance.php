@@ -16,6 +16,7 @@
 </head>
 
 <body>
+  
  <?php include_once("./partials/navbar.php") ?>
 
   <main>
@@ -32,7 +33,7 @@
                
             </div>
             
-            <p class="test position-fixed col-5 my-3" >Select Division ,City and Upazila to find the nearest ambulance service. You can know about their ambulance details and you can also send an ambulance booking application for your patient through our system. </p>
+            <p class="test position-fixed col-5 my-3" >Select Division ,District and Upazila to find the nearest ambulance service. You can know about their ambulance details and you can also send an ambulance booking application for your patient through our system. </p>
            
         </div>
           <div class="col-lg-6 mb-5 form-content py-5">
@@ -46,10 +47,10 @@
                 </option>
               </select>
                 
-                  <label for="city" class="form-lable">City</label>
+                  <label for="city" class="form-lable">District</label>
                   <select class="form-select" name="city" id="city">
                     <option value="select-message" selected>
-                      Plese Select Your City
+                      Plese Select Your District
                     </option>
                   </select>
                   <label for="upazila" class="form-lable">Upazila</label>

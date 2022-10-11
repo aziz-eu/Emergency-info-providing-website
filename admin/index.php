@@ -53,7 +53,7 @@
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg  bg-white">
           <div class="container">
-            <a class="navbar-brand" href="./admin_dashboard.php">Emergency Info <span>&</span> Help</a>
+            <a class="navbar-brand" href="../index.php">Emergency Info <span>&</span> Help</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -86,7 +86,7 @@
             <div class="col-lg-6 mb-5 form-content py-5">
                 <?php include_once '../partials/msg.php' ?>
                 <form action="index.php" method="post">
-                    <label for="email" class="form-lable">E-mail/username</label>
+                    <label for="email" class="form-lable">Username</label>
                     <input type="text" class="form-control" name="username" id="email" required
                       placeholder="e.g. captain@emaxple.com">
                     <label for="password" class="form-lable">Password</label>
@@ -149,12 +149,7 @@
         ></a>
 
         <!-- Github -->
-        <a
-          class="btn btn-outline-light btn-floating m-1"
-          href="#!"
-          role="button"
-          ><i class="fab fa-github"></i
-        ></a>
+        
       </section>
       <!-- Section: Social media -->
     </div>

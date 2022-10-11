@@ -3,14 +3,14 @@ include_once './admin_includes/admin_function.php';
 include_once './admin_includes/admin_session.php';
 include_once './admin_includes/db.php';
 guard('index.php', 'You must login first');
-$sql = "SELECT * FROM `blood_request`";
+$sql = "SELECT * FROM `blood_donation_request`";
 $results = $con->query($sql);
 
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
 
-    $sql = "DELETE FROM `blood_request` WHERE `id` = '$id'";
+    $sql = "DELETE FROM `blood_donation_request` WHERE `id` = '$id'";
     // $result = mysqli_query($conn, $sql);
     if ($con->query($sql) == true) {
         //   $sql = "SELECT * FROM `blood_bank` WHERE id = '$id' LIMIT 1";
@@ -46,7 +46,7 @@ if (isset($_GET['delete'])) {
 
 
 
-    <header class="sticky-top">
+<header class="sticky-top">
         <nav class="navbar navbar-expand-lg  bg-white">
             <div class="container">
                 <a class="navbar-brand" href="./admin_dashboard.php">Emergency Info <span>&</span> Help</a>
@@ -55,13 +55,16 @@ if (isset($_GET['delete'])) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
+                    <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="./admin_dashboard.php">Dashboard</a>
                         </li>
-
-
+                        
+                    <li class="nav-list">
+                    <a href="messages.php" class="nav-link">Messages</a>
+                    </li>
                     </ul>
-                    <a href="messages.php" class="btn btn-brand ms-lg-3">Messages</a>
+                    <a href="./logout.php" class="btn btn-brand ms-lg-3">Log Out</a>
+                    
 
                 </div>
             </div>
@@ -150,7 +153,7 @@ if (isset($_GET['delete'])) {
                 <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
 
                 <!-- Github -->
-                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+                
             </section>
             <!-- Section: Social media -->
         </div>
