@@ -3,6 +3,11 @@ include_once 'includes/function.php';
 include_once 'includes/session.php';
 include_once 'config/db.php';
 
+$sql1 = "SELECT user_name FROM `blood_donors`";
+$results1 = $con->query($sql1);
+
+
+
 
 if(isset($_POST['regForm'])){
     //pr($_POST, true);
@@ -20,6 +25,16 @@ if(isset($_POST['regForm'])){
     $upazila =  trim($_POST['upazila']);
     $username = trim( $_POST['user_name']);
     $password =  md5(trim($_POST['password']));
+
+    while ($row = $results1->fetch_assoc()) {
+      
+      if ($row['user_name'] ==$username ){
+        redirect('donor_registration.php', 'Username Already Exits', 'danger');
+        break;
+
+      }
+    }
+    
 
     $sql = "INSERT INTO blood_donors(frist_name, last_name, blood_group, gender, age, weight, email, phone, address, division, city, upazila, user_name, password) VALUES('$fristname', '$lastname', '$blood_group', '$gender', '$age', '$weight', '$email', '$phone', '$address', '$division', '$city', '$upazila', '$username', '$password' )";
 
@@ -75,6 +90,7 @@ if(isset($_POST['regForm'])){
            
         </div>
           <div class="col-lg-6 mb-5 form-content py-5">
+            <?php include_once("./partials/msg.php") ?>
             <form action="donor_registration.php"  method="post">
               <div class="row">
               <div class="col-6">

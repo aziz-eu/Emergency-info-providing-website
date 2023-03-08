@@ -3,6 +3,9 @@ include_once 'includes/function.php';
 include_once 'includes/session.php';
 include_once 'config/db.php';
 
+$sql1 = "SELECT user_name FROM `blood_bank`";
+$results1 = $con->query($sql1);
+
 
 if(isset($_POST['bloodRegForm'])){
     //pr($_POST, true);
@@ -16,7 +19,18 @@ if(isset($_POST['bloodRegForm'])){
     $username = trim( $_POST['username']);
     $password =  md5(trim($_POST['password']));
 
+    while ($row = $results1->fetch_assoc()) {
+      
+      if ($row['user_name'] ==$username ){
+        redirect('blood_bank_registration.php', 'Username Already Exits', 'danger');
+        break;
+
+      }
+    }
+
     $sql = "INSERT INTO blood_bank(bank_name, email, phone, address, division, city, upazila, user_name, password) VALUES('$bank_name', '$email', '$phone', '$address', '$division', '$city', '$upazila', '$username', '$password' )";
+
+
 
     if($con->query($sql) == true  ){
       redirect('login.php', 'Registraion successfully');
