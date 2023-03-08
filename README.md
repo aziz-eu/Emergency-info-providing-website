@@ -5,5 +5,5 @@
 
 <p>Screen Shot</>
 
-<img src="ScreenShot/homePage.png">
-<img src="ScreenShot/homePage_2.png">
+<img src="ScreenShot/home_page.png">
+<img src="ScreenShot/home_page_2.png">
